@@ -1,0 +1,173 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link href='../css/bootstrap.css' rel="stylesheet">
+
+	<!--Link Font Awesome-->
+	<script src="https://kit.fontawesome.com/e7b4566ef7.js" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+
+	<!--Style-->
+	<link href='../css/estilo.css' rel="stylesheet">
+
+	<!--Icone da aba, aba do navegador-->
+	<link rel="icon" href='../imagens/logo_aba_engrenagem.png'>
+
+	<title>Criar Unidade-admin</title>
+
+</head>
+
+<body>
+
+
+	<input type="checkbox" id="bt_menu">
+	<label for="bt_menu">&#9776;</label>
+
+	<nav class="menu">
+		<ul>
+			<li><a href='../administrador/home.php'>Home</a></li>
+			<li><a href='../administrador/equipamentos.php'>Equipamentos</a>
+				<ul>
+					<li><a href="#">Patrimônios</a></li>
+					<li><a href="#">Alugadas</a></li>
+				</ul>
+			</li>
+			<li><a href='../administrador/cadastrar.php'>Cadastrar</a></li>
+			<li><a href='../administrador/admin.php'>Administrador</a>
+				<ul>
+					<li><a href='../administrador/criar_usuario.php'>Adicionar Usuário</a></li>
+					<li><a href='../administrador/criar_unidade.php'>Adicionar Unidade</a></li>
+				</ul>
+			</li>
+			<li><a href='../administrador/estoque.php'>Estoque</a></li>
+		</ul>
+		<div class="posicao-btn-sair">
+			<button class="btn_sair btn-green">SAIR</button>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="foto-logo">
+			<div class="row">
+				<div class="col-md-12">
+					<img src='../imagens/logo_os.png' alt="OS-SantaCatarina" width="100%" height="100%">
+				</div>
+			</div>
+		</div>
+		<div class="titulo">
+			<h2>Cadastrar Usuário</h2>
+		</div>
+		<form class="form-horizontal" action="salvar_criar_usuario.php" method="POST" autocomplete="off">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label><i class="fas fa-user-plus"></i> Nome do Usuário</label>
+						<input type="text" name="pessoa" class="form-control" id="usuario" placeholder="Usuário" required>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label><i class="fas fa-unlock-alt"></i> Senha</label>
+						<input type="text" name="codigo" class="form-control" id="senha" placeholder="Senha">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label><i class="far fa-address-card"></i> Login</label>
+						<input type="text" name="criar" class="form-control" id="login" placeholder="Login">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label><i class="fas fa-id-badge"></i> Numero Crachá</label>
+						<input type="text" name="cracha" class="form-control" id="cracha" placeholder="Matrícula">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label><i class="fas fa-sort-numeric-up"></i> CPF</label>
+						<input type="text" name="documento" class="form-control" maxlength="14" id="cpf" placeholder="CPF" onkeypress="this.value = FormataCpf(event)" onpaste="return false;" required>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label><i class="fas fa-university"></i> Unidade</label require>
+						<select type="text" name="unidade" class="form-control" id="unidade" onclick="formatar()">
+							<option selected disabled>Escolha Unidade</option required>
+							<?php
+							include_once("conexao.php");
+							$consult = "SELECT * FROM tb_unidades WHERE cnes ORDER BY nome_da_unidade";
+							$consulta = mysqli_query($conn, $consult);
+							while ($row_cat_post = mysqli_fetch_assoc($consulta)) {
+								echo '<option value="' . $row_cat_post['nome_da_unidade'] . '"> ' . $row_cat_post['nome_da_unidade'] . '</option>';
+							}
+							?>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label><i class="fas fa-fingerprint"></i> CNES</label>
+						<input type="text" name="cnes" class="form-control" id="cnes" placeholder="Cadastro Nacional de Estabelecimentos de Saúde">
+					</div>
+				</div>
+			</div>
+			<div class="cadastrar">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="text-center">
+							<input class="btn btn-outline-primary" id="bt_cadastrar" type="submit" name="submit" value="Salvar dados">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="text-center">
+							<input class="btn btn-outline-primary" id="bt_cadastrar" type="reset" value="Limpar">
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<br>
+
+	<div class="dmr">
+		Sistema desenvolvido por Paulo Albuquerque - 2019 .
+	</div>
+
+
+	<script>
+		function verificaNumero(e) {
+			if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+				return false;
+			}
+		}
+		$(document).ready(function() {
+			$("#cpf").keypress(verificaNumero);
+		});
+
+		function FormataCpf(evt) {
+			vr = (navigator.appName == 'Netscape') ? evt.target.value : evt.srcElement.value;
+			if (vr.length == 3) vr = vr + ".";
+			if (vr.length == 7) vr = vr + ".";
+			if (vr.length == 11) vr = vr + "-";
+			return vr;
+		}
+	</script>
+
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

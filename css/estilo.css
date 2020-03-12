@@ -1,0 +1,278 @@
+        * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    hr {
+        background-color: rgb(73, 112, 161);
+        height: 5px;
+    }
+    
+    .menu {
+        width: 100%;
+        height: 54px;
+        background-color: rgb(73, 112, 161);
+        font-family: Arial;
+        position: fixed;
+        /*Sobrepor menu sobre DIV.*/
+        z-index: 9;
+    }
+    
+    .menu ul {
+        list-style: none;
+    }
+    
+    .menu ul li {
+        width: 165px;
+        float: left;
+    }
+    
+    .menu a {
+        padding: 15px;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        background-color: rgb(73, 112, 161);
+        color: #FFF;
+    }
+    
+    .menu ul ul {
+        position: absolute;
+        visibility: hidden;
+    }
+    
+    .menu ul li:hover ul {
+        visibility: visible;
+    }
+    
+    .menu a:hover {
+        background-color: #f4f4f4;
+        color: #555;
+    }
+    
+    .menu ul ul li {
+        float: none;
+        border-bottom: solid 1.5px #ccc;
+    }
+    
+    .menu ul ul li a {
+        background-color: rgb(73, 112, 161);
+    }
+    /*Label - Icone no canto superior esquerdo*/
+    
+    label[for="bt_menu"] {
+        padding: 5px;
+        background-color: rgb(73, 112, 161);
+        color: #fff;
+        font-family: "Arial";
+        text-align: center;
+        font-size: 30px;
+        cursor: pointer;
+        width: 80px;
+        width: 50px;
+    }
+    
+    #bt_menu {
+        display: none;
+    }
+    
+    label[for="bt_menu"] {
+        display: none;
+    }
+
+    /*Container*/
+    
+    .container {
+        height: 100%;
+        padding: 50px;
+    }
+    /*Div formulario do cadastro*/
+    
+    .formulario {
+        text-align: center;
+    }
+    
+    .formulario input {
+        border-radius: 5px;
+        text-align: center;
+    }
+    
+    .formulario label {
+        text-align: center;
+        font-family: "Arial";
+    }
+    
+    .btn_home {
+        text-align: center;
+    }
+
+    /*Botões da página de cadastro*/
+
+    .btn .btn-outline-secondary {
+        background-color: rgba(12, 41, 170, 0.411);
+    }
+
+    .cadastrar {
+        margin: 25px;
+    }
+
+    #bt_cadastrar {
+        width: 100%;
+        padding: 5px;
+        
+    }
+    /*FOOTER*/
+    
+    .dmr {
+        width: 100%;
+        background-color: rgb(73, 112, 161);
+        font-family: Arial;
+        position: fixed;
+        bottom: 0;
+        text-align: center;
+        padding: 15px;
+    }
+    /*CADASTRO SELECIONAR OPÇÕES*/
+    
+    #formatar,
+    label {
+        text-align: center;
+        padding: 1px;
+        width: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .caixa_informacoes {
+        padding: 20px;
+        margin: 20px;
+        background:rgb(73, 112, 161);
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 5px;
+    }
+
+    /*CAIXA (DIV) DO ADMIN*/
+    
+    .caixa {
+        padding: 90px;
+        text-align: center;    
+        background-color: rgb(81, 80, 82);
+        color: white;
+        size: 50px;
+    }
+
+     /*TITULO DO ADMIN*/
+
+    .titulo {
+        text-align: center;
+        height: autopx;
+        background-color: rgb(81, 80, 82);
+        border-radius: 10px;
+        margin-bottom: 25px;
+        color: white;
+        font-family: Arial;
+    }
+
+    /*BOTÃO DE SAIR*/
+
+    .btn_sair {
+        font-family: Arial;
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: 500;
+        border:none;
+        padding: 3px;
+        cursor: pointer;
+        color: black;
+        border-radius: 25px;
+    }
+
+    .btn-green:hover {
+        background:rgb(73, 112, 161);
+        box-shadow: 0 3px 0 #555;
+        color: #fff;
+    }
+
+    .btn-green:active {
+        position: relative;
+        top:6px;
+        box-shadow: none;
+        color: #fff;
+    }
+
+    .posicao-btn-sair {
+        text-align: right;
+        margin:0;  
+        padding-right: 15px;
+    }
+
+    #selecionar_option {
+        opacity: 90%;
+        text-align: center;
+    }
+
+    .lista{
+        background-color: red;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    /*edições da Tabela de informações do estoque.php*/
+    .tabela_informacoes {
+        background: #515052;
+        width: 100%;
+        height: 50px;
+        text-align: center;
+        border-radius: 2.5rem;
+        margin-bottom: 550px;
+    }
+
+    /*Ajuste para quando a tela chegar em 800px*/
+    
+    @media(max-width: 800px) {
+
+        label[for="bt_menu"] {
+            display: block;
+        }
+        #bt_menu:checked~.menu {
+            margin-left: 0;
+        }
+        .menu {
+            margin-top: 5px;
+            margin-left: -100%;
+            transition: all .4s;
+        }
+        .menu ul li {
+            width: 100%;
+            float: none;
+        }
+        .menu ul ul {
+            position: static;
+            overflow: hidden;
+            max-height: 0;
+            transition: all .4s;
+        }
+        .menu ul li:hover ul {
+            height: auto;
+            max-height: 200px;
+        }
+        .dmr {
+            position:50px;
+        }
+
+        .foto-logo {
+            width: 100%;
+            height: 100%;
+        }
+
+        #bt_cadastrar {
+            margin: 10px;
+            position:50px;
+        }
+
+        .posicao_de_logo {
+            margin: 150px;
+            position:50px;
+            
+        }
+
+    }
