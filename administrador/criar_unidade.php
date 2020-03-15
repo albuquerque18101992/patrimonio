@@ -24,7 +24,7 @@ session_start();
     <!--Icone da aba, aba do navegador-->
     <link rel="icon" href='../imagens/logo_aba_engrenagem.png'>
 
-    <title>Criar Unidade-admin</title>
+    <title>Criar Unidade</title>
 </head>
 
 <body>
@@ -37,11 +37,12 @@ session_start();
             <li><a href='../administrador/home.php'>Home</a></li>
             <li><a href='../administrador/equipamentos.php'>Equipamentos</a>
                 <ul>
-                    <li><a href="#">Patrimônios</a></li>
+                    <li><a href='../administrador/maquinas_patrimonio.php'>Patrimônios</a></li>
                     <li><a href="#">Alugadas</a></li>
                 </ul>
             </li>
             <li><a href='../administrador/cadastrar.php'>Cadastrar</a></li>
+            <li><a href='../administrador/impressoras.php'>Impressoras</a>
             <li><a href='../administrador/admin.php'>Administrador</a>
                 <ul>
                     <li><a href='../administrador/criar_usuario.php'>Adicionar Usuário</a></li>
@@ -103,8 +104,7 @@ session_start();
         </form>
     </div>
     <br>
-
-
+    
     <div class="dmr">
         Sistema desenvolvido por Paulo Albuquerque - 2019 .
     </div>

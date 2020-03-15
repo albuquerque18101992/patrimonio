@@ -23,7 +23,7 @@ session_start();
     <!--Icone da aba, aba do navegador-->
     <link rel="icon" href='../imagens/logo_aba_engrenagem.png'>
 
-    <title>Administrador</title>
+    <title>Estoque</title>
 </head>
 
 <body>
@@ -36,11 +36,12 @@ session_start();
             <li><a href='../administrador/home.php'>Home</a></li>
             <li><a href='../administrador/equipamentos.php'>Equipamentos</a>
                 <ul>
-                    <li><a href="#">Patrimônios</a></li>
+                    <li><a href='../administrador/maquinas_patrimonio.php'>Patrimônios</a></li>
                     <li><a href="#">Alugadas</a></li>
                 </ul>
             </li>
             <li><a href='../administrador/cadastrar.php'>Cadastrar</a></li>
+            <li><a href='../administrador/impressoras.php'>Impressoras</a>
             <li><a href='../administrador/admin.php'>Administrador</a>
                 <ul>
                     <li><a href='../administrador/criar_usuario.php'>Adicionar Usuário</a></li>
@@ -66,66 +67,73 @@ session_start();
             <h2>Controle interno de produtos</h2>
         </div>
 
-        <div class="row">
-            <div class="col-md-4">
-                <label for=""> <i class="fas fa-laptop-code"></i> Nome Produto</label>
-                <input type="text" class="form-control" placeholder="Produto">
-            </div>
-            <div class="col-md-2">
-                <label for=""> <i class="fas fa-sitemap"></i> Código Produto</label>
-                <input type="text" class="form-control" placeholder="Códiog MV">
-            </div>
-            <div class="col-md-3">
-                <label for=""> <i class="fas fa-dollar-sign"></i> Adicionados</label>
-                <input type="number" class="form-control" placeholder="Guardados">
-            </div>
-            <div class="col-md-3">
-                <label for=""> <i class="fas fa-file-signature"></i> Retirados</label>
-                <input type="number" class="form-control" placeholder="Usados">
-            </div>
-        </div>
 
-        <div class="cadastrar">
+        <form method="POST" action="salvar_estoque.php" autocomplete="off">
             <div class="row">
-                <div class="col-md-12">
-                    <input class="btn btn-outline-primary" id="bt_cadastrar" type="submit" name="submit" value="Salvar Produto">
+                <div class="col-md-4">
+                    <label for=""> <i class="fas fa-laptop-code"></i> Nome Produto</label>
+                    <input type="text" class="form-control" placeholder="Produto" name="nome_produto">
+                </div>
+                <div class="col-md-2">
+                    <label for=""> <i class="fas fa-sitemap"></i> Código Produto</label>
+                    <input type="text" class="form-control" placeholder="Códiog MV" name="codigo_mv">
+                </div>
+                <div class="col-md-3">
+                    <label for=""> <i class="fas fa-dollar-sign"></i> Adicionados</label>
+                    <input type="number" class="form-control" placeholder="Guardados" name="guardados">
+                </div>
+                <div class="col-md-3">
+                    <label for=""> <i class="fas fa-file-signature"></i> Retirados</label>
+                    <input type="number" class="form-control" placeholder="Usados" name="retirados">
                 </div>
             </div>
-        </div>
 
-        <div class="container-fluid">
+            <div class="cadastrar">
+                <div class="row">
+                    <div class="col-md-12">
+                        <input class="btn btn-outline-primary" id="bt_cadastrar" type="submit" name="Salvar" value="Salvar Produto">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <br>
+        <div class="container-fluid text-center">
             <div class="tituloss">
                 <h1>Produtos Armazenados</h1>
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col">Nome Produto</th>
-                            <th scope="col">Código</th>
-                            <th scope="col">Mínimo</th>
-                            <th scope="col">Estocados</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Pihas</td>
-                            <td>6689</td>
-                            <td>100</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>Teclado USB</td>
-                            <td>8754</td>
-                            <td>15</td>
-                            <td>11</td>
-                        </tr>
-                        <tr>
-                            <td>Limpa Contato</td>
-                            <td>9576</td>
-                            <td>10</td>
-                            <td>8</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <?php
+                include_once('conexao.php');
+                $result_usuario = "SELECT * FROM tb_estoque";
+                $resultado_usuario = mysqli_query($conn, $result_usuario);
+
+
+                //Verificar se encontrou resultado na tabela "usuarios"
+                if (($resultado_usuario) and ($resultado_usuario->num_rows != 0)) {
+                ?>
+                    <table class="table table-hover ">
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Código dentro do MV</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            while ($row_usuario = mysqli_fetch_assoc($resultado_usuario)) {
+                            ?>
+                                <tr>
+                                    <td><?php echo $row_usuario['nome_produto']; ?></td>
+                                    <td><?php echo $row_usuario['codigo_mv']; ?></td>
+                                </tr>
+                            <?php
+                            } ?>
+                        </tbody>
+                    </table>
+                <?php
+                } else {
+                    echo "<div class='alert alert-danger' role='alert'>Nenhum equipamento encontrado!</div>";
+                }
+
+                ?>
             </div>
         </div>
     </div>

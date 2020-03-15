@@ -1,5 +1,5 @@
 <?php
-include_once("conexao.php");
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -8,7 +8,7 @@ include_once("conexao.php");
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cadastro de Unidade</title>
+    <title>Salvar estoque</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -18,13 +18,15 @@ include_once("conexao.php");
     <div class="container theme-showcase" role="main">
         <?php
         include_once('conexao.php');
-        $nome_da_unidade = $_POST['nome_da_unidade'];
-        $nome_gerente = $_POST['nome_gerente'];
-        $cnes = $_POST['cnes'];
+        $nome_produto = $_POST['nome_produto'];
+        $codigo_mv = $_POST['codigo_mv'];
+        $guardados = $_POST['guardados'];
+        $retirados = $_POST['retirados'];
 
-        $criacao_unidade = " INSERT INTO tb_unidades (nome_da_unidade, nome_gerente, cnes) VALUES ('$nome_da_unidade', '$nome_gerente', '$cnes')";
+        $estoque_guardando = "INSERT INTO tb_estoque (nome_produto, codigo_mv, guardados, retirados) VALUES ( '$nome_produto', '$codigo_mv', '$guardados', '$retirados')";
 
-        $criacao_unidade = mysqli_query($conn, $criacao_unidade);
+        $estoque_guardando = mysqli_query($conn, $estoque_guardando);
+
 
         if (mysqli_affected_rows($conn) > 0) { ?>
             <!-- Modal -->
@@ -32,14 +34,14 @@ include_once("conexao.php");
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">Unidade cadastrada com Sucesso !</h4>
+                            <h4 class="modal-title" id="myModalLabel">Produto cadastrato no estoque com sucesso !</h4>
                         </div>
                         <div class="modal-body">
-                            <?php echo $nome_da_unidade; ?>
+                            <?php echo $nome_produto; ?>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-info" data-dismiss="modal">Corrigir Cadastro</button>
-                            <a href="criar_unidade.php"><button type="button" class="btn btn-success"> Ok </button></a>
+                            <a href="estoque.php"><button type="button" class="btn btn-success"> Ok </button></a>
                         </div>
                     </div>
                 </div>
@@ -58,10 +60,10 @@ include_once("conexao.php");
                             <h4 class="modal-title" id="myModalLabel">ALGO DEU ERRADO !</h4>
                         </div>
                         <div class="modal-body">
-                            <?php echo $nome_da_unidade; ?>
+                            <?php echo $nome_produto; ?>
                         </div>
                         <div class="modal-footer">
-                            <a href="criar_unidade.php"><button type="button" class="btn btn-danger">Ok</button></a>
+                            <a href="estoque.php"><button type="button" class="btn btn-danger">Ok</button></a>
                         </div>
                     </div>
                 </div>
@@ -73,5 +75,7 @@ include_once("conexao.php");
             </script>
         <?php } ?>
     </div>
+
 </body>
+
 </html>

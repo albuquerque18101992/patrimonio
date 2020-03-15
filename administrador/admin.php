@@ -32,18 +32,19 @@ session_start();
             <li><a href='../administrador/home.php'>Home</a></li>
             <li><a href='../administrador/equipamentos.php'>Equipamentos</a>
                 <ul>
-                    <li><a href="#">Patrimônios</a></li>
+                    <li><a href='../administrador/maquinas_patrimonio.php'>Patrimônios</a></li>
                     <li><a href="#">Alugadas</a></li>
                 </ul>
             </li>
             <li><a href='../administrador/cadastrar.php'>Cadastrar</a></li>
+            <li><a href='../administrador/impressoras.php'>Impressoras</a>
             <li><a href='../administrador/admin.php'>Administrador</a>
                 <ul>
                     <li><a href='../administrador/criar_usuario.php'>Adicionar Usuário</a></li>
                     <li><a href='../administrador/criar_unidade.php'>Adicionar Unidade</a></li>
                 </ul>
-            <li><a href='../administrador/estoque.php'>Estoque</a></li>
             </li>
+            <li><a href='../administrador/estoque.php'>Estoque</a></li>
         </ul>
         <div class="posicao-btn-sair">
             <button class="btn_sair btn-green">SAIR</button>

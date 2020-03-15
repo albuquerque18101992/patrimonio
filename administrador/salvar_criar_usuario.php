@@ -17,18 +17,29 @@ include_once("conexao.php");
 <body>
 	<div class="container theme-showcase" role="main">
 		<?php
-
 		$erro = false;
 		if (!$erro) {
 			$pessoa = $_POST['pessoa'];
+			$unidade = $_POST['unidade'];
 			$codigo = md5($_POST['codigo']);
 			$criar = $_POST['criar'];
 			$cracha = $_POST['cracha'];
 			$documento = $_POST['documento'];
-			$unidade = $_POST['unidade'];
-			$cnes = $_POST['cnes'];
+			$sexo = $_POST['sexo'];
+			$nivel_acesso = $_POST['nivel_acesso'];
 
-			$result_ususario_acesso = "INSERT INTO tb_usuario (pessoa, codigo, criar, cracha, documento, unidade, cnes) VALUES ('$pessoa', '$codigo','$criar', '$cracha', '$documento', '$unidade', '$cnes')";
+
+			$result_ususario_acesso = "INSERT INTO tb_usuario 
+			(pessoa,
+			 unidade, 
+			 codigo, 
+			 criar, 
+			 cracha, 
+			 documento, 
+			 sexo, 
+			 nivel_acesso) 
+			 VALUES ('$pessoa', '$unidade', '$codigo','$criar', '$cracha', '$documento', '$sexo', '$nivel_acesso')";
+
 			$resultado_usuario_acesso = mysqli_query($conn, $result_ususario_acesso);
 		}
 

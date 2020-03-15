@@ -1,6 +1,3 @@
-<?php
-include_once("conexao.php");
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -18,28 +15,32 @@ include_once("conexao.php");
     <div class="container theme-showcase" role="main">
         <?php
         include_once('conexao.php');
-        $nome_da_unidade = $_POST['nome_da_unidade'];
-        $nome_gerente = $_POST['nome_gerente'];
-        $cnes = $_POST['cnes'];
+        $localizacao = $_POST['localizacao'];
+        $fabricante = $_POST['fabricante'];
+        $contrato = $_POST['contrato'];
+        $serial_equipamento = $_POST['serial_equipamento'];
+        $numero_serie_impressora = $_POST['numero_serie_impressora'];
+        $descricoes = $_POST['descricoes'];
 
-        $criacao_unidade = " INSERT INTO tb_unidades (nome_da_unidade, nome_gerente, cnes) VALUES ('$nome_da_unidade', '$nome_gerente', '$cnes')";
+        $salvando_impressoras = "INSERT INTO tb_impressoras (localizacao, fabricante, contrato, serial_equipamento, numero_serie_impressora, descricoes) VALUES ('$localizacao', '$fabricante', '$contrato', '$serial_equipamento', '$numero_serie_impressora', '$descricoes')";
 
-        $criacao_unidade = mysqli_query($conn, $criacao_unidade);
+        $salvando_impressoras = mysqli_query($conn, $salvando_impressoras);
 
         if (mysqli_affected_rows($conn) > 0) { ?>
+
             <!-- Modal -->
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">Unidade cadastrada com Sucesso !</h4>
+                            <h4 class="modal-title" id="myModalLabel">Impressora cadastrada com Sucesso !</h4>
                         </div>
                         <div class="modal-body">
-                            <?php echo $nome_da_unidade; ?>
+                            <?php echo $serial_equipamento; ?>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-info" data-dismiss="modal">Corrigir Cadastro</button>
-                            <a href="criar_unidade.php"><button type="button" class="btn btn-success"> Ok </button></a>
+                            <a href="impressoras.php"><button type="button" class="btn btn-success"> Ok </button></a>
                         </div>
                     </div>
                 </div>
@@ -58,7 +59,7 @@ include_once("conexao.php");
                             <h4 class="modal-title" id="myModalLabel">ALGO DEU ERRADO !</h4>
                         </div>
                         <div class="modal-body">
-                            <?php echo $nome_da_unidade; ?>
+                            <?php echo $serial_equipamento; ?>
                         </div>
                         <div class="modal-footer">
                             <a href="criar_unidade.php"><button type="button" class="btn btn-danger">Ok</button></a>
@@ -73,5 +74,7 @@ include_once("conexao.php");
             </script>
         <?php } ?>
     </div>
+
 </body>
+
 </html>

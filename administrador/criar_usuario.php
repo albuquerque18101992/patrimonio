@@ -23,7 +23,7 @@ session_start();
 	<!--Icone da aba, aba do navegador-->
 	<link rel="icon" href='../imagens/logo_aba_engrenagem.png'>
 
-	<title>Criar Unidade-admin</title>
+	<title>Criar Usuário</title>
 
 </head>
 
@@ -38,11 +38,12 @@ session_start();
 			<li><a href='../administrador/home.php'>Home</a></li>
 			<li><a href='../administrador/equipamentos.php'>Equipamentos</a>
 				<ul>
-					<li><a href="#">Patrimônios</a></li>
+					<li><a href='../administrador/maquinas_patrimonio.php'>Patrimônios</a></li>
 					<li><a href="#">Alugadas</a></li>
 				</ul>
 			</li>
 			<li><a href='../administrador/cadastrar.php'>Cadastrar</a></li>
+			<li><a href='../administrador/impressoras.php'>Impressoras</a>
 			<li><a href='../administrador/admin.php'>Administrador</a>
 				<ul>
 					<li><a href='../administrador/criar_usuario.php'>Adicionar Usuário</a></li>
@@ -76,31 +77,7 @@ session_start();
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-6">
-					<div class="form-group">
-						<label><i class="fas fa-unlock-alt"></i> Senha</label>
-						<input type="text" name="codigo" class="form-control" id="senha" placeholder="Senha">
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="form-group">
-						<label><i class="far fa-address-card"></i> Login</label>
-						<input type="text" name="criar" class="form-control" id="login" placeholder="Login">
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="form-group">
-						<label><i class="fas fa-id-badge"></i> Numero Crachá</label>
-						<input type="text" name="cracha" class="form-control" id="cracha" placeholder="Matrícula">
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="form-group">
-						<label><i class="fas fa-sort-numeric-up"></i> CPF</label>
-						<input type="text" name="documento" class="form-control" maxlength="14" id="cpf" placeholder="CPF" onkeypress="this.value = FormataCpf(event)" onpaste="return false;" required>
-					</div>
-				</div>
-				<div class="col-md-6">
+				<div class="col-md-12">
 					<div class="form-group">
 						<label><i class="fas fa-university"></i> Unidade</label require>
 						<select type="text" name="unidade" class="form-control" id="unidade" onclick="formatar()">
@@ -116,11 +93,49 @@ session_start();
 						</select>
 					</div>
 				</div>
+			</div>
+			<div class="row">
 				<div class="col-md-6">
 					<div class="form-group">
-						<label><i class="fas fa-fingerprint"></i> CNES</label>
-						<input type="text" name="cnes" class="form-control" id="cnes" placeholder="Cadastro Nacional de Estabelecimentos de Saúde">
+						<label><i class="fas fa-unlock-alt"></i> Senha</label>
+						<input type="text" name="codigo" class="form-control" id="senha" placeholder="Senha entre 4 e 6 caracteres" maxlength="6">
 					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label><i class="far fa-address-card"></i> Login</label>
+						<input type="text" name="criar" class="form-control" id="login" placeholder="Login">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label><i class="fas fa-id-badge"></i> Número Crachá</label>
+						<input type="text" name="cracha" class="form-control" id="cracha" placeholder="Matrícula">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label><i class="fas fa-sort-numeric-up"></i> CPF</label>
+						<input type="text" name="documento" class="form-control" maxlength="14" id="cpf" placeholder="CPF" onkeypress="this.value = FormataCpf(event)" onpaste="return false;" required>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<label for="exampleFormControlSelect1"><i class="fas fa-venus-mars"></i> Sexo</label>
+					<select type="text" name="sexo" class="form-control">
+						<option selected disabled>SELECIONAR</option>
+						<option value="1">Masculino</option>
+						<option value="2">Feminino</option>
+					</select>
+				</div>
+				<div class="col-md-6">
+					<label for="exampleFormControlSelect1"><i class="fas fa-database"></i> Nível de acesso</label>
+					<select type="text" name="nivel_acesso" class="form-control" name="fabricante" id="formatar">
+						<option selected disabled>SELECIONAR</option>
+						<option value="1">Administrador</option>
+						<option value="2">Unidade</option>
+						<option value="3">Simpress</option>
+						<option value="4">Técnicos</option>
+					</select>
 				</div>
 			</div>
 			<div class="cadastrar">

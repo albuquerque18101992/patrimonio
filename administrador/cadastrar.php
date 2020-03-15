@@ -22,7 +22,7 @@ session_start();
     <!--Icone da aba, aba do navegador-->
     <link rel="icon" href='../imagens/logo_aba_engrenagem.png'>
 
-    <title>Cadastrar-admin</title>
+    <title>Cadastrar</title>
 
     <style>
         .error {
@@ -41,11 +41,12 @@ session_start();
             <li><a href='../administrador/home.php'>Home</a></li>
             <li><a href='../administrador/equipamentos.php'>Equipamentos</a>
                 <ul>
-                    <li><a href="#">Patrimônios</a></li>
+                    <li><a href='../administrador/maquinas_patrimonio.php'>Patrimônios</a></li>
                     <li><a href="#">Alugadas</a></li>
                 </ul>
             </li>
             <li><a href='../administrador/cadastrar.php'>Cadastrar</a></li>
+            <li><a href='../administrador/impressoras.php'>Impressoras</a>
             <li><a href='../administrador/admin.php'>Administrador</a>
                 <ul>
                     <li><a href='../administrador/criar_usuario.php'>Adicionar Usuário</a></li>
@@ -112,6 +113,7 @@ session_start();
                             <option>Serviço Social</option>
                             <option>Sinais Vitais</option>
                             <option>SUVIS</option>
+                            <option>Outros</option>
                         </select>
                     </div>
                     <div class="col-md-4">
@@ -120,6 +122,7 @@ session_start();
                             <option selected disabled>SELECIONAR</option>
                             <option>Dell</option>
                             <option>Positivo</option>
+                            <option>Outros</option>
                         </select>
                     </div>
                     <div class="col-md-4">
@@ -128,6 +131,8 @@ session_start();
                             <option selected disabled id="selecionar_option">SELECIONAR</option>
                             <option>Alugada</option>
                             <option>Patrimônio</option>
+                            <option>Serviços específicos</option>
+                            <option>Outros</option>
                         </select>
                     </div>
                 </div>
@@ -137,7 +142,7 @@ session_start();
                 <div class="row">
                     <div class="col-md-4">
                         <label for=""><i class="fas fa-laptop-medical"></i> Computadores</label>
-                        <input type="text" name="numero_serie_cpu" class="form-control" id="exampleInputEmail1" maxlength="19" placeholder="Numero de Série" <?php
+                        <input type="text" name="numero_serie_cpu" class="form-control" id="exampleInputEmail1" maxlength="19" placeholder="Número de Série" <?php
                                                                                                                                                                 if (!empty($_SESSION['value_numero_serie_cpu'])) {
                                                                                                                                                                     echo "value='" . $_SESSION['value_numero_serie_cpu'] . "'";
                                                                                                                                                                     unset($_SESSION['value_numero_serie_cpu']);
@@ -152,7 +157,7 @@ session_start();
                     </div>
                     <div class="col-md-4">
                         <label for=""><i class="fas fa-tv"></i> Monitores</label>
-                        <input type="text" name="numero_serie_monitor" class="form-control" id="exampleInputEmail1" maxlength="19" placeholder="Numero de Série" <?php
+                        <input type="text" name="numero_serie_monitor" class="form-control" id="exampleInputEmail1" maxlength="19" placeholder="Número de Série" <?php
                                                                                                                                                                     if (!empty($_SESSION['value_numero_serie_monitor'])) {
                                                                                                                                                                         echo "value='" . $_SESSION['value_numero_serie_monitor'] . "'";
                                                                                                                                                                         unset($_SESSION['value_numero_serie_monitor']);
@@ -167,7 +172,7 @@ session_start();
                     </div>
                     <div class="col-md-4">
                         <label for=""><i class="fas fa-mouse"></i> N/S Mouse</label>
-                        <input type="text" name="numero_serie_mouse" class="form-control" id="exampleInputEmail1" maxlength="6" placeholder="Numero de Série" <?php
+                        <input type="text" name="numero_serie_mouse" class="form-control" id="exampleInputEmail1" maxlength="6" placeholder="Número de Série" <?php
                                                                                                                                                                 if (!empty($_SESSION['value_numero_serie_mouse'])) {
                                                                                                                                                                     echo "value='" . $_SESSION['value_numero_serie_mouse'] . "'";
                                                                                                                                                                     unset($_SESSION['value_numero_serie_mouse']);
@@ -185,7 +190,7 @@ session_start();
                 <div class="row">
                     <div class="col-md-4">
                         <label for=""><i class="fas fa-keyboard"></i> N/S Teclado</label>
-                        <input type="text" name="numero_serie_teclado" class="form-control" id="exampleInputEmail1" maxlength="6" placeholder="Numero de Série" <?php
+                        <input type="text" name="numero_serie_teclado" class="form-control" id="exampleInputEmail1" maxlength="6" placeholder="Número de Série" <?php
                                                                                                                                                                 if (!empty($_SESSION['value_numero_serie_teclado'])) {
                                                                                                                                                                     echo "value='" . $_SESSION['value_numero_serie_teclado'] . "'";
                                                                                                                                                                     unset($_SESSION['value_numero_serie_teclado']);
@@ -200,7 +205,7 @@ session_start();
                     </div>
                     <div class="col-md-4">
                         <label for=""><i class="fas fa-laptop-medical"></i> Computadores</label>
-                        <input type="text" name="numero_ti_cpu" class="form-control" id="exampleInputEmail1" maxlength="6" placeholder="Numero T.I" <?php
+                        <input type="text" name="numero_ti_cpu" class="form-control" id="exampleInputEmail1" maxlength="6" placeholder="Número T.I" <?php
                                                                                                                                                     if (!empty($_SESSION['value_numero_ti_cpu'])) {
                                                                                                                                                         echo "value='" . $_SESSION['value_numero_ti_cpu'] . "'";
                                                                                                                                                         unset($_SESSION['value_numero_ti_cpu']);
@@ -215,7 +220,7 @@ session_start();
                     </div>
                     <div class="col-md-4">
                         <label for=""><i class="fas fa-tv"></i> Monitores</label>
-                        <input type="text" name="numero_ti_monitor" class="form-control" id="exampleInputEmail1" maxlength="6" placeholder="Numero T.I" <?php
+                        <input type="text" name="numero_ti_monitor" class="form-control" id="exampleInputEmail1" maxlength="6" placeholder="Número T.I" <?php
                                                                                                                                                         if (!empty($_SESSION['value_numero_ti_monitor'])) {
                                                                                                                                                             echo "value='" . $_SESSION['value_numero_ti_monitor'] . "'";
                                                                                                                                                             unset($_SESSION['value_numero_ti_monitor']);

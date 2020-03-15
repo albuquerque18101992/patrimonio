@@ -226,6 +226,12 @@
         margin-bottom: 550px;
     }
 
+    .texto-home {
+        border-width: medium;
+        border-style: solid;
+        border-color: #00f;
+    }
+
     /*Ajuste para quando a tela chegar em 800px*/
     
     @media(max-width: 800px) {
@@ -275,4 +281,8 @@
             
         }
 
+        .texto-home {
+            font-size: 30px;
+
+        }
     }

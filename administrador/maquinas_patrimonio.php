@@ -51,16 +51,17 @@ session_start();
         </div>
     </nav>
 
+    <br>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="container">
                     <?php
                     include_once('conexao.php');
-                    $result_usuario = "SELECT * FROM cadastrar_ativos";
+                    $result_usuario = "SELECT contrato FROM 1cadastrar_ativos ";
                     $resultado_usuario = mysqli_query($conn, $result_usuario);
 
-                    //Verificar se encontrou resultado na tabela "usuarios"
                     if (($resultado_usuario) and ($resultado_usuario->num_rows != 0)) {
                     ?>
                         <table class="table table-hover ">
@@ -83,10 +84,6 @@ session_start();
                                         <td><?php echo $row_usuario['fabricante']; ?></td>
                                         <td><?php echo $row_usuario['numero_ti_cpu']; ?></td>
                                         <td><?php echo $row_usuario['numero_ti_monitor']; ?></td>
-                                        <td>
-                                            <a href="">Editar</a> ||
-                                            <a href="">Deletar</a>
-                                        </td>
                                     </tr>
                                 <?php
                                 } ?>
