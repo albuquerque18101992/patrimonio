@@ -1,6 +1,7 @@
         * {
         margin: 0;
         padding: 0;
+        font-family: Arial, sans-serif ;
     }
     
     hr {
@@ -170,6 +171,7 @@
         margin-bottom: 25px;
         color: white;
         font-family: Arial;
+        padding: 5px;
     }
 
     /*BOTÃO DE SAIR*/
@@ -200,9 +202,8 @@
     }
 
     .posicao-btn-sair {
-        text-align: right;
-        margin:0;  
-        padding-right: 15px;
+        text-align: right; 
+        padding-right: 16px;
     }
 
     #selecionar_option {
@@ -210,11 +211,11 @@
         text-align: center;
     }
 
-    .lista{
-        background-color: red;
-        border-radius: 15px;
-        text-align: center;
+    .paragrafos {
+        text-align: justify;
+        font-size: 20px;
     }
+
 
     /*edições da Tabela de informações do estoque.php*/
     .tabela_informacoes {
@@ -226,10 +227,10 @@
         margin-bottom: 550px;
     }
 
-    .texto-home {
-        border-width: medium;
-        border-style: solid;
-        border-color: #00f;
+    .editar-span {
+        text-align: center;
+        margin: 55px;
+        
     }
 
     /*Ajuste para quando a tela chegar em 800px*/

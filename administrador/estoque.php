@@ -37,7 +37,7 @@ session_start();
             <li><a href='../administrador/equipamentos.php'>Equipamentos</a>
                 <ul>
                     <li><a href='../administrador/maquinas_patrimonio.php'>Patrimônios</a></li>
-                    <li><a href="#">Alugadas</a></li>
+                    <li><a href='../administrador/maquinas_alugadas.php'>Alugadas</a></li>
                 </ul>
             </li>
             <li><a href='../administrador/cadastrar.php'>Cadastrar</a></li>
@@ -51,7 +51,7 @@ session_start();
             <li><a href='../administrador/estoque.php'>Estoque</a></li>
         </ul>
         <div class="posicao-btn-sair">
-            <button class="btn_sair btn-green">SAIR</button>
+            <button class="btn_sair btn-green"><i class="fas fa-sign-out-alt"></i> </button>
         </div>
     </nav>
 
@@ -76,7 +76,7 @@ session_start();
                 </div>
                 <div class="col-md-2">
                     <label for=""> <i class="fas fa-sitemap"></i> Código Produto</label>
-                    <input type="text" class="form-control" placeholder="Códiog MV" name="codigo_mv">
+                    <input type="text" class="form-control" placeholder="Códiog MV" name="codigo_mv" required>
                 </div>
                 <div class="col-md-3">
                     <label for=""> <i class="fas fa-dollar-sign"></i> Adicionados</label>
@@ -114,6 +114,7 @@ session_start();
                             <tr>
                                 <th>Produto</th>
                                 <th>Código dentro do MV</th>
+                                <th>Estocado</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -123,6 +124,11 @@ session_start();
                                 <tr>
                                     <td><?php echo $row_usuario['nome_produto']; ?></td>
                                     <td><?php echo $row_usuario['codigo_mv']; ?></td>
+                                    <td><?php echo $row_usuario['guardados'];?></td>
+                                    <td>
+                                        <a href="">Editar</a> ||
+                                        <a href="">Deletar</a>
+                                    </td>
                                 </tr>
                             <?php
                             } ?>

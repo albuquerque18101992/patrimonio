@@ -20,9 +20,10 @@
         $contrato = $_POST['contrato'];
         $serial_equipamento = $_POST['serial_equipamento'];
         $numero_serie_impressora = $_POST['numero_serie_impressora'];
+        $modelo = $_POST['modelo'];
         $descricoes = $_POST['descricoes'];
 
-        $salvando_impressoras = "INSERT INTO tb_impressoras (localizacao, fabricante, contrato, serial_equipamento, numero_serie_impressora, descricoes) VALUES ('$localizacao', '$fabricante', '$contrato', '$serial_equipamento', '$numero_serie_impressora', '$descricoes')";
+        $salvando_impressoras = "INSERT INTO tb_impressoras (localizacao, fabricante, contrato, serial_equipamento, numero_serie_impressora, modelo, descricoes) VALUES ('$localizacao', '$fabricante', '$contrato', '$serial_equipamento', '$numero_serie_impressora', '$modelo', '$descricoes')";
 
         $salvando_impressoras = mysqli_query($conn, $salvando_impressoras);
 
@@ -36,7 +37,7 @@
                             <h4 class="modal-title" id="myModalLabel">Impressora cadastrada com Sucesso !</h4>
                         </div>
                         <div class="modal-body">
-                            <?php echo $serial_equipamento; ?>
+                            <?php echo $modelo; ?>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-info" data-dismiss="modal">Corrigir Cadastro</button>
@@ -59,7 +60,7 @@
                             <h4 class="modal-title" id="myModalLabel">ALGO DEU ERRADO !</h4>
                         </div>
                         <div class="modal-body">
-                            <?php echo $serial_equipamento; ?>
+                            <?php echo $modelo; ?>
                         </div>
                         <div class="modal-footer">
                             <a href="criar_unidade.php"><button type="button" class="btn btn-danger">Ok</button></a>

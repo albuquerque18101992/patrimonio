@@ -39,7 +39,7 @@ session_start();
 			<li><a href='../administrador/equipamentos.php'>Equipamentos</a>
 				<ul>
 					<li><a href='../administrador/maquinas_patrimonio.php'>Patrimônios</a></li>
-					<li><a href="#">Alugadas</a></li>
+					<li><a href='../administrador/maquinas_alugadas.php'>Alugadas</a></li>
 				</ul>
 			</li>
 			<li><a href='../administrador/cadastrar.php'>Cadastrar</a></li>
@@ -53,7 +53,7 @@ session_start();
 			<li><a href='../administrador/estoque.php'>Estoque</a></li>
 		</ul>
 		<div class="posicao-btn-sair">
-			<button class="btn_sair btn-green">SAIR</button>
+			<button class="btn_sair btn-green"><i class="fas fa-sign-out-alt"></i> </button>
 		</div>
 	</nav>
 	<div class="container">
@@ -140,14 +140,19 @@ session_start();
 			</div>
 			<div class="cadastrar">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-4">
 						<div class="text-center">
 							<input class="btn btn-outline-primary" id="bt_cadastrar" type="submit" name="submit" value="Salvar dados">
 						</div>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-4">
 						<div class="text-center">
-							<input class="btn btn-outline-primary" id="bt_cadastrar" type="reset" value="Limpar">
+							<input class="btn btn-outline-primary" id="bt_cadastrar" type="reset" value="Limpar campos">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="text-center">
+							<a href='../administrador/todos_usuarios.php' class="btn btn-outline-primary" id="bt_cadastrar"> Mais detalhes</a>  
 						</div>
 					</div>
 				</div>

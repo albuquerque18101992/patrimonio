@@ -13,6 +13,9 @@ session_start();
     <!-- Bootstrap CSS -->
     <link href='../css/bootstrap.css' rel="stylesheet">
 
+    <!--Link Font Awesome-->
+    <script src="https://kit.fontawesome.com/e7b4566ef7.js" crossorigin="anonymous"></script>
+
     <!--Style-->
     <link href='../css/estilo.css' rel="stylesheet">
 
@@ -33,7 +36,7 @@ session_start();
             <li><a href='../administrador/equipamentos.php'>Equipamentos</a>
                 <ul>
                     <li><a href='../administrador/maquinas_patrimonio.php'>Patrimônios</a></li>
-                    <li><a href="#">Alugadas</a></li>
+                    <li><a href='../administrador/maquinas_alugadas.php'>Alugadas</a></li>
                 </ul>
             </li>
             <li><a href='../administrador/cadastrar.php'>Cadastrar</a></li>
@@ -47,10 +50,10 @@ session_start();
             <li><a href='../administrador/estoque.php'>Estoque</a></li>
         </ul>
         <div class="posicao-btn-sair">
-            <button class="btn_sair btn-green">SAIR</button>
+            <button class="btn_sair btn-green"><i class="fas fa-sign-out-alt"></i> </button>
         </div>
     </nav>
-
+    <br>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -60,7 +63,7 @@ session_start();
                     $result_usuario = "SELECT * FROM cadastrar_ativos";
                     $resultado_usuario = mysqli_query($conn, $result_usuario);
 
-                    //Verificar se encontrou resultado na tabela "usuarios"
+                    //Verificar se encontrou resultado na tabela "cadastrar_ativos"
                     if (($resultado_usuario) and ($resultado_usuario->num_rows != 0)) {
                     ?>
                         <table class="table table-hover ">

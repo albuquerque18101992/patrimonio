@@ -13,6 +13,9 @@ session_start();
     <!-- Bootstrap CSS -->
     <link href='../css/bootstrap.css' rel="stylesheet">
 
+    <!--Link Font Awesome-->
+    <script src="https://kit.fontawesome.com/e7b4566ef7.js" crossorigin="anonymous"></script>
+
     <!--Style-->
     <link rel="stylesheet" type="text/css" href='../css/estilo.css'>
 
@@ -35,7 +38,7 @@ session_start();
             <li><a href='../administrador/equipamentos.php'>Equipamentos</a>
                 <ul>
                     <li><a href='../administrador/maquinas_patrimonio.php'>Patrimônios</a></li>
-                    <li><a href="#">Alugadas</a></li>
+                    <li><a href='../administrador/maquinas_alugadas.php'>Alugadas</a></li>
                 </ul>
             </li>
             <li><a href='../administrador/cadastrar.php'>Cadastrar</a></li>
@@ -49,7 +52,7 @@ session_start();
             <li><a href='../administrador/estoque.php'>Estoque</a></li>
         </ul>
         <div class="posicao-btn-sair">
-            <button class="btn_sair btn-green">SAIR</button>
+            <button class="btn_sair btn-green"><i class="fas fa-sign-out-alt"></i> </button>
         </div>
     </nav>
 
@@ -65,87 +68,94 @@ session_start();
 
         <div class="container-fluid">
 
-            <h4>Sistema para armazenamento das informações dos computadores e demais equipamentos de informática . </h4>
-            <p> Sistema Criado para armazenamento, consulta e conhecimento das máquinas da tecnologia da informação das unidades .
-                Sistema simples, onde a idéia é ter controle dos dados de série e modelos dos computadores nas unidades da OS Santa Catarina
-                Cpu, monitores, e impressoras assim a movimentação e respectivos acréscimos de equipamentos poderão ser controladas e acompanhadas com maior facilidade .
+            <div class="titulo">
+                <h4>Sistema para armazenamento das informações dos computadores e demais equipamentos de informática . </h4>
+            </div>
 
-                <p> Mais um avanço dentro da equipe de Tecnologia da Informação da OS Santa Catarina, sempre buscando novas ferramentas e facilidades, para o dia a dia, logo abaixo algumas das ferramentas que estamos gerenciadno para melhor atender nossos colaboradores .</p>
-            </p>
+            <div class="paragrafos">
+                <p> Sistema Criado para armazenamento, consulta e conhecimento das máquinas da tecnologia da informação das unidades .
+                    Sistema simples, onde a idéia é ter controle dos dados de série e modelos dos computadores nas unidades da OS Santa Catarina
+                    Cpu, monitores, e impressoras assim a movimentação e respectivos acréscimos de equipamentos poderão ser controladas e acompanhadas com maior facilidade .
+
+                    <p> Mais um avanço dentro da equipe de Tecnologia da Informação da OS Santa Catarina, sempre buscando novas ferramentas e facilidades, para o dia a dia, logo abaixo algumas das ferramentas que estamos gerenciadno para melhor atender nossos colaboradores .</p>
+                </p>
+            </div>
         </div>
-        <div class="texto-home">
-            <h2>Algumas das ferramentas que a equipe de tecnologia da informação gerencia e mantem sempre em funcionamento .</h2>
-            <br>
 
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="card" style="width: 15rem;">
-                        <a href="http://177.66.152.194:4321/glpi/" target="_blank">
-                            <img src="../imagens/ti.png" class="card-img-top" alt="GLPI - T.I">
-                        </a>
-                        <div class="card-body">
-                            <p class="card-text">GLPI da T.I .</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card" style="width: 15rem;">
-                        <a href="http://177.66.152.194:4321/infraestrutura/" target="_blank">
-                            <img src="../imagens/infraestrutura.png" class="card-img-top" alt="GLPI - Infraestrutura">
-                        </a>
-                        <div class="card-body">
-                            <p class="card-text">GLPI da Infraestrutura</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card" style="width: 15rem;">
-                        <a href="http://sau.ossantacatarina.org.br/" target="_blank">
-                            <img src="../imagens/sau.png" class="card-img-top" alt="S.A.U">
-                        </a>
-                        <div class="card-body">
-                            <p class="card-text">GLPI S.A.U</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card" style="width: 15rem;">
-                        <a href="http://facilities.ossantacatarina.org.br/facilities/index.php?noAUTO=1" target="_blank">
-                            <img src="../imagens/facilities.png" class="card-img-top" alt="Facilities">
-                        </a>
-                        <div class="card-body">
-                            <p class="card-text">GLPI Facilities</p>
-                        </div>
+        <div class="titulo">
+            <h2>Algumas das ferramentas que a equipe de tecnologia da informação gerencia e mantem sempre em funcionamento .</h2>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card" style="width: 15rem;">
+                    <a href="http://177.66.152.194:4321/glpi/" target="_blank">
+                        <img src="../imagens/ti.png" class="card-img-top" alt="GLPI - T.I">
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text">GLPI da T.I .</p>
                     </div>
                 </div>
             </div>
-            <br>
-            <div class="row">
-                <div class="col-md-3">
-                </div>
-                <div class="col-md-3">
-                    <div class="card" style="width: 15rem;">
-                        <a href="http://www.intranet.ossantacatarina.org.br/login" target="_blank">
-                            <img src="../imagens/intranet.png" class="card-img-top" alt="Intranet OS">
-                        </a>
-                        <div class="card-body">
-                            <p class="card-text">Intranet da OSACSC</p>
-                        </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 15rem;">
+                    <a href="http://177.66.152.194:4321/infraestrutura/" target="_blank">
+                        <img src="../imagens/infraestrutura.png" class="card-img-top" alt="GLPI - Infraestrutura">
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text">GLPI da Infraestrutura</p>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="card" style="width: 15rem;">
-                        <a href="http://gestaodecaso.ossantacatarina.org.br/" target="_blank">
-                            <img src="../imagens/gestaocaso.png" class="card-img-top" alt="Gestão de casos">
-                        </a>
-                        <div class="card-body">
-                            <p class="card-text">Sistema Gestão de Casos .</p>
-                        </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 15rem;">
+                    <a href="http://sau.ossantacatarina.org.br/" target="_blank">
+                        <img src="../imagens/sau.png" class="card-img-top" alt="S.A.U">
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text">GLPI S.A.U</p>
                     </div>
                 </div>
-                <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 15rem;">
+                    <a href="http://facilities.ossantacatarina.org.br/facilities/index.php?noAUTO=1" target="_blank">
+                        <img src="../imagens/facilities.png" class="card-img-top" alt="Facilities">
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text">GLPI Facilities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 15rem;">
+                    <a href="http://www.intranet.ossantacatarina.org.br/login" target="_blank">
+                        <img src="../imagens/intranet.png" class="card-img-top" alt="Intranet OS">
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text">Intranet da OSACSC</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 15rem;">
+                    <a href="http://gestaodecaso.ossantacatarina.org.br/" target="_blank">
+                        <img src="../imagens/gestaocaso.png" class="card-img-top" alt="Gestão de casos">
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text">Sistema Gestão de Casos .</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
 
-                </div>
             </div>
         </div>
     </div>

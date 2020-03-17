@@ -13,6 +13,9 @@ session_start();
     <!-- Bootstrap CSS -->
     <link href='../css/bootstrap.css' rel="stylesheet">
 
+    <!--Link Font Awesome-->
+    <script src="https://kit.fontawesome.com/e7b4566ef7.js" crossorigin="anonymous"></script>
+
     <!--Style-->
     <link href='../css/estilo.css' rel="stylesheet">
 
@@ -33,7 +36,7 @@ session_start();
             <li><a href='../administrador/equipamentos.php'>Equipamentos</a>
                 <ul>
                     <li><a href='../administrador/maquinas_patrimonio.php'>Patrimônios</a></li>
-                    <li><a href="#">Alugadas</a></li>
+                    <li><a href='../administrador/maquinas_alugadas.php'>Alugadas</a></li>
                 </ul>
             </li>
             <li><a href='../administrador/cadastrar.php'>Cadastrar</a></li>
@@ -47,7 +50,7 @@ session_start();
             <li><a href='../administrador/estoque.php'>Estoque</a></li>
         </ul>
         <div class="posicao-btn-sair">
-            <button class="btn_sair btn-green">SAIR</button>
+            <button class="btn_sair btn-green"><i class="fas fa-sign-out-alt"></i> </button>
         </div>
     </nav>
 
@@ -57,6 +60,9 @@ session_start();
         <div class="row">
             <div class="col-md-12">
                 <div class="container">
+                    <div class="titulo">
+                        <h1>Máquinas Patrimônio</h1>
+                    </div>
                     <?php
                     include_once('conexao.php');
                     $result_usuario = "SELECT contrato FROM 1cadastrar_ativos ";
@@ -84,6 +90,10 @@ session_start();
                                         <td><?php echo $row_usuario['fabricante']; ?></td>
                                         <td><?php echo $row_usuario['numero_ti_cpu']; ?></td>
                                         <td><?php echo $row_usuario['numero_ti_monitor']; ?></td>
+                                        <td>
+                                            <a href="">Editar</a> ||
+                                            <a href="">Deletar</a>
+                                        </td>
                                     </tr>
                                 <?php
                                 } ?>

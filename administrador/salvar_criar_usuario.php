@@ -43,9 +43,6 @@ include_once("conexao.php");
 			$resultado_usuario_acesso = mysqli_query($conn, $result_ususario_acesso);
 		}
 
-
-
-
 		if (mysqli_affected_rows($conn) > 0) { ?>
 			<!-- Modal -->
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

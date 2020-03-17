@@ -42,7 +42,7 @@ session_start();
             <li><a href='../administrador/equipamentos.php'>Equipamentos</a>
                 <ul>
                     <li><a href='../administrador/maquinas_patrimonio.php'>Patrimônios</a></li>
-                    <li><a href="#">Alugadas</a></li>
+                    <li><a href='../administrador/maquinas_alugadas.php'>Alugadas</a></li>
                 </ul>
             </li>
             <li><a href='../administrador/cadastrar.php'>Cadastrar</a></li>
@@ -56,7 +56,7 @@ session_start();
             <li><a href='../administrador/estoque.php'>Estoque</a></li>
         </ul>
         <div class="posicao-btn-sair">
-            <button class="btn_sair btn-green">SAIR</button>
+            <button class="btn_sair btn-green"><i class="fas fa-sign-out-alt"></i> </button>
         </div>
     </nav>
 
@@ -66,8 +66,8 @@ session_start();
                 <img src='../imagens/logo_os.png' alt="OS-SantaCatarina" width="100%" height="100%">
             </div>
         </div>
-        <div class="titulo">
-            <h2>Cadastrar Equipamentos de Informática</h2>
+        <div class="posicao-btn-sair">
+            <button class="btn_sair btn-green"><i class="fas fa-sign-out-alt"></i> </button>
         </div>
         <hr>
         <form method="POST" action="salvar_cadastar.php" autocomplete="off">
@@ -77,62 +77,62 @@ session_start();
                         <label for="exampleFormControlSelect1"><i class="fas fa-map-marker-alt"></i> Localização</label>
                         <select type="text" name="localizacao" class="form-control" id="formatar">
                             <option selected disabled>SELECIONAR</option>
-                            <option>Administração</option>
-                            <option>Call Center</option>
-                            <option>Consultório Médico</option>
-                            <option>Consultório Odontologico</option>
-                            <option>Data Center</option>
-                            <option>Farmácia</option>
-                            <option>Recepção</option>
-                            <option>Sala de Acolhimento</option>
-                            <option>Sala de Almoxarifado</option>
-                            <option>Sala de Coleta</option>
-                            <option>Sala de Curativo</option>
-                            <option>Sala de Demanda</option>
-                            <option>Sala de Enfermagem</option>
-                            <option>Sala de Estudos</option>
-                            <option>Sala de Farmácia Satélite</option>
-                            <option>Sala de Faturamento</option>
-                            <option>Sala de Gerência</option>
-                            <option>Sala de Instalação</option>
-                            <option>Sala de Medicação</option>
-                            <option>Sala de Observação Adulto</option>
-                            <option>Sala de Observação Infantil</option>
-                            <option>Sala de Ortopedia</option>
-                            <option>Sala de Papanicolau</option>
-                            <option>Sala de Psiquiatria</option>
-                            <option>Sala de Raio X</option>
-                            <option>Sala de Regulação</option>
-                            <option>Sala Saúde da Mulher</option>
-                            <option>Sala de Triagem</option>
-                            <option>Sala de Vacina</option>
-                            <option>Sala de Vigilância</option>
-                            <option>Sala dos ACS's</option>
-                            <option>Sala Multi Uso</option>
-                            <option>SAME</option>
-                            <option>Serviço Social</option>
-                            <option>Sinais Vitais</option>
-                            <option>SUVIS</option>
-                            <option>Outros</option>
+                            <option value="1">Administração</option>
+                            <option value="2">Call Center</option>
+                            <option value="3">Consultório Médico</option>
+                            <option value="3">Consultório Odontologico</option>
+                            <option value="4">Data Center</option>
+                            <option value="5">Farmácia</option>
+                            <option value="6">Recepção</option>
+                            <option value="7">Sala de Acolhimento</option>
+                            <option value="8">Sala de Almoxarifado</option>
+                            <option value="9">Sala de Coleta</option>
+                            <option value="10">Sala de Curativo</option>
+                            <option value="11">Sala de Demanda</option>
+                            <option value="12">Sala de Enfermagem</option>
+                            <option value="13">Sala de Estudos</option>
+                            <option value="14">Sala de Farmácia Satélite</option>
+                            <option value="15">Sala de Faturamento</option>
+                            <option value="16">Sala de Gerência</option>
+                            <option value="17">Sala de Instalação</option>
+                            <option value="18">Sala de Medicação</option>
+                            <option value="19">Sala de Observação Adulto</option>
+                            <option value="20">Sala de Observação Infantil</option>
+                            <option value="21">Sala de Ortopedia</option>
+                            <option value="22">Sala de Papanicolau</option>
+                            <option value="23">Sala de Psiquiatria</option>
+                            <option value="24">Sala de Raio X</option>
+                            <option value="25">Sala de Regulação</option>
+                            <option value="26">Sala Saúde da Mulher</option>
+                            <option value="27">Sala de Triagem</option>
+                            <option value="28">Sala de Vacina</option>
+                            <option value="29">Sala de Vigilância</option>
+                            <option value="30">Sala dos ACS's</option>
+                            <option value="31">Sala Multi Uso</option>
+                            <option value="32">SAME</option>
+                            <option value="33">Serviço Social</option>
+                            <option value="34">Sinais Vitais</option>
+                            <option value="35">SUVIS</option>
+                            <option value="36">Outros</option>
                         </select>
                     </div>
                     <div class="col-md-4">
                         <label for="exampleFormControlSelect1"><i class="fas fa-award"></i> Fabricante</label>
                         <select type="text" name="fabricante" class="form-control" name="fabricante" id="formatar">
                             <option selected disabled>SELECIONAR</option>
-                            <option>Dell</option>
-                            <option>Positivo</option>
-                            <option>Outros</option>
+                            <option value="1">Dell</option>
+                            <option value="2">Positivo</option>
+                            <option value="3">Outros</option>
                         </select>
                     </div>
                     <div class="col-md-4">
                         <label for="exampleFormControlSelect1"><i class="far fa-folder-open"></i> Tipo</label>
                         <select type="text" name="contrato" class="form-control" name="tipo" id="formatar">
                             <option selected disabled id="selecionar_option">SELECIONAR</option>
-                            <option>Alugada</option>
-                            <option>Patrimônio</option>
-                            <option>Serviços específicos</option>
-                            <option>Outros</option>
+                            <option value="1">Alugada</option>
+                            <option value="2">Patrimônio</option>
+                            <option value="3">Serviços específicos</option>
+                            <option value="4">Outros</option>
                         </select>
                     </div>
                 </div>

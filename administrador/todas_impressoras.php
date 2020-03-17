@@ -15,7 +15,6 @@ session_start();
 
     <!--Link Font Awesome-->
     <script src="https://kit.fontawesome.com/e7b4566ef7.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
 
     <!--Style-->
     <link href='../css/estilo.css' rel="stylesheet">
@@ -23,7 +22,7 @@ session_start();
     <!--Icone da aba, aba do navegador-->
     <link rel="icon" href='../imagens/logo_aba_engrenagem.png'>
 
-    <title>Administrador</title>
+    <title>Patrimônio</title>
 </head>
 
 <body>
@@ -54,33 +53,55 @@ session_start();
             <button class="btn_sair btn-green"><i class="fas fa-sign-out-alt"></i> </button>
         </div>
     </nav>
-
-    <div class="container">
-        <div class="foto-logo">
-            <div class="row">
-                <div class="col-md-12">
-                    <img src='../imagens/logo_os.png' alt="OS-SantaCatarina" width="100%" height="100%">
-                </div>
-            </div>
-        </div>
+    <br>
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <div class="pos-f-t">
-                    <nav class="navbar navbar-dark bg-dark">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </nav>
-                    <div class="collapse" id="navbarToggleExternalContent">
-                        <div class="bg-dark p-4">
-                            <h5 class="text-white h4">Área Administrativa</h5>
-                            <span class="text-white">Espaço de criação e exclusão de usuários e unidades, no botão <strong>Administrador</strong> tem duas abas <strong>Adicionar Usuário</strong> e <strong>Adicionar Unidade</strong> para possíveis unidades e colaboradores que vinherem integrar nossa equipe . OS Santa Catarina juntos somos mais fortes .</span>
-                        </div>
-                    </div>
+                <div class="container">
+                    <?php
+                    include_once('conexao.php');
+                    $result_usuario = "SELECT * FROM tb_impressoras ";
+                    $resultado_usuario = mysqli_query($conn, $result_usuario);
+
+                    //Verificar se encontrou resultado na tabela "cadastrar_ativos"
+                    if (($resultado_usuario) and ($resultado_usuario->num_rows != 0)) {
+                    ?>
+                        <table class="table table-hover ">
+                            <thead>
+                                <tr>
+                                    <th>Localização</th>
+                                    <th>Marca</th>
+                                    <th>Contrato</th>
+                                    <th>Modelo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                while ($row_impressoras = mysqli_fetch_assoc($resultado_usuario)) {
+                                ?>
+                                    <tr>
+                                        <td><?php echo $row_impressoras['localizacao']; ?></td>
+                                        <td><?php echo $row_impressoras['fabricante']; ?></td>
+                                        <td><?php echo $row_impressoras['contrato']; ?></td>
+                                        <td><?php echo $row_impressoras['modelo']; ?></td>
+                                        <td>
+                                            <a href="">Editar</a> ||
+                                            <a href="">Deletar</a>
+                                        </td>
+                                    </tr>
+                                <?php
+                                } ?>
+                            </tbody>
+                        </table>
+                    <?php
+                    } else {
+                        echo "<div class='alert alert-danger' role='alert'>Nenhum equipamento encontrado!</div>";
+                    }
+
+                    ?>
                 </div>
             </div>
         </div>
-
     </div>
 
     <div class="dmr">
