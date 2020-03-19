@@ -53,7 +53,7 @@ session_start();
                     <li><a href='../administrador/criar_unidade.php'>Adicionar Unidade</a></li>
                 </ul>
             </li>
-            <li><a href='../administrador/estoque.php'>Estoque</a></li>
+            <li><a href='../administrador/estoque_home.php'>Materiais</a></li>
         </ul>
         <div class="posicao-btn-sair">
             <button class="btn_sair btn-green"><i class="fas fa-sign-out-alt"></i> </button>
@@ -121,19 +121,19 @@ session_start();
                         <label for="exampleFormControlSelect1"><i class="fas fa-award"></i> Fabricante</label>
                         <select type="text" name="fabricante" class="form-control" name="fabricante" id="formatar">
                             <option selected disabled>SELECIONAR</option>
-                            <option value="1">Samsung</option>
-                            <option value="2">HP</option>
-                            <option value="3">Outros</option>
+                            <option value="samsung">Samsung</option>
+                            <option value="hp">HP</option>
+                            <option value="outros">Outros</option>
                         </select>
                     </div>
                     <div class="col-md-4">
                         <label for="exampleFormControlSelect1"><i class="far fa-folder-open"></i> Tipo</label>
                         <select type="text" name="contrato" class="form-control" name="tipo" id="formatar" required>
                             <option selected disabled id="selecionar_option">SELECIONAR</option>
-                            <option value="1">Alugada</option>
-                            <option value="2">Patrimônio</option>
-                            <option value="3">Serviços específicos</option>
-                            <option value="4">Outros</option>
+                            <option value="alugada">Alugada</option>
+                            <option value="patrimonio">Patrimônio</option>
+                            <option value="especificos">Serviços específicos</option>
+                            <option value="outros">Outros</option>
                         </select>
                     </div>
                 </div>
@@ -165,17 +165,17 @@ session_start();
                 </div>
                 <div class="col-md-4">
                     <label for=""><i class="fas fa-tv"></i> Número T.I</label>
-                    <input type="text" name="numero_serie_impressora" class="form-control" id="exampleInputEmail1" maxlength="10" placeholder="Número de Série T.I">
+                    <input type="text" name="numero_serie_impressora" class="form-control" id="exampleInputEmail1" maxlength="6" placeholder="Número de Série T.I">
                 </div>
                 <div class="col-md-4">
                     <label for="exampleFormControlSelect1"><i class="fas fa-compress-arrows-alt"></i> Modelo</label>
                     <select type="text" name="modelo" class="form-control" id="formatar" required>
                         <option selected disabled id="selecionar_option">SELECIONAR</option>
-                        <option value="1">4020</option>
-                        <option value="2">7010</option>
-                        <option value="3">3020</option>
-                        <option value="4">4580</option>
-                        <option value="5">Zebra</option>
+                        <option value="4020">4020</option>
+                        <option value="7010">7010</option>
+                        <option value="3020">3020</option>
+                        <option value="4580">4580</option>
+                        <option value="zebra">Zebra</option>
                     </select>
                 </div>
             </div>
@@ -186,7 +186,7 @@ session_start();
                     <div class="row">
                         <div class="col-md-12">
                             <label for="">Informações Pertinentes ao Equipamento</label>
-                            <textarea type="text-area" name="descricoes" placeholder="Observções sobre o equipamento ." style="width:70%;height:50px; border-radius:5px"></textarea>
+                            <textarea type="text-area" name="descricoes" maxlength="280" placeholder="Observções sobre o equipamento ." style="width:80%;height:80px; border-radius:5px"></textarea>
                         </div>
                     </div>
                 </div>

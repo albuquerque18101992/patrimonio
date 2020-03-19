@@ -48,7 +48,7 @@ session_start();
                     <li><a href='../administrador/criar_unidade.php'>Adicionar Unidade</a></li>
                 </ul>
             </li>
-            <li><a href='../administrador/estoque.php'>Estoque</a></li>
+            <li><a href='../administrador/estoque_home.php'>Materiais</a></li>
         </ul>
         <div class="posicao-btn-sair">
             <button class="btn_sair btn-green"><i class="fas fa-sign-out-alt"></i> </button>
@@ -64,38 +64,9 @@ session_start();
             </div>
         </div>
         <div class="titulo">
-            <h2>Controle interno de produtos</h2>
+            <h2>Controle interno de produtos, visão geral.</h2>
         </div>
 
-
-        <form method="POST" action="salvar_estoque.php" autocomplete="off">
-            <div class="row">
-                <div class="col-md-4">
-                    <label for=""> <i class="fas fa-laptop-code"></i> Nome Produto</label>
-                    <input type="text" class="form-control" placeholder="Produto" name="nome_produto">
-                </div>
-                <div class="col-md-2">
-                    <label for=""> <i class="fas fa-sitemap"></i> Código Produto</label>
-                    <input type="text" class="form-control" placeholder="Códiog MV" name="codigo_mv" required>
-                </div>
-                <div class="col-md-3">
-                    <label for=""> <i class="fas fa-dollar-sign"></i> Adicionados</label>
-                    <input type="number" class="form-control" placeholder="Guardados" name="guardados">
-                </div>
-                <div class="col-md-3">
-                    <label for=""> <i class="fas fa-file-signature"></i> Retirados</label>
-                    <input type="number" class="form-control" placeholder="Usados" name="retirados">
-                </div>
-            </div>
-
-            <div class="cadastrar">
-                <div class="row">
-                    <div class="col-md-12">
-                        <input class="btn btn-outline-primary" id="bt_cadastrar" type="submit" name="Salvar" value="Salvar Produto">
-                    </div>
-                </div>
-            </div>
-        </form>
         <br>
         <div class="container-fluid text-center">
             <div class="tituloss">
@@ -112,8 +83,8 @@ session_start();
                     <table class="table table-hover ">
                         <thead>
                             <tr>
-                                <th>Produto</th>
                                 <th>Código dentro do MV</th>
+                                <th>Produto</th>
                                 <th>Estocado</th>
                             </tr>
                         </thead>
@@ -122,9 +93,9 @@ session_start();
                             while ($row_usuario = mysqli_fetch_assoc($resultado_usuario)) {
                             ?>
                                 <tr>
-                                    <td><?php echo $row_usuario['nome_produto']; ?></td>
                                     <td><?php echo $row_usuario['codigo_mv']; ?></td>
-                                    <td><?php echo $row_usuario['guardados'];?></td>
+                                    <td><?php echo $row_usuario['nome_produto']; ?></td>
+                                    <td><?php echo $row_usuario['guardados']; ?></td>
                                     <td>
                                         <a href="">Editar</a> ||
                                         <a href="">Deletar</a>

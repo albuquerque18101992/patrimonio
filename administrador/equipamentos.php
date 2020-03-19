@@ -47,7 +47,7 @@ session_start();
                     <li><a href='../administrador/criar_unidade.php'>Adicionar Unidade</a></li>
                 </ul>
             </li>
-            <li><a href='../administrador/estoque.php'>Estoque</a></li>
+            <li><a href='../administrador/estoque_home.php'>Materiais</a></li>
         </ul>
         <div class="posicao-btn-sair">
             <button class="btn_sair btn-green"><i class="fas fa-sign-out-alt"></i> </button>
@@ -58,6 +58,9 @@ session_start();
         <div class="row">
             <div class="col-md-12">
                 <div class="container">
+                    <div class="titulo">
+                        <h1>Equipamentos da unidade</h1>
+                    </div>
                     <?php
                     include_once('conexao.php');
                     $result_usuario = "SELECT * FROM cadastrar_ativos";

@@ -47,7 +47,7 @@ session_start();
                     <li><a href='../administrador/criar_unidade.php'>Adicionar Unidade</a></li>
                 </ul>
             </li>
-            <li><a href='../administrador/estoque.php'>Estoque</a></li>
+            <li><a href='../administrador/estoque_home.php'>Materiais</a></li>
         </ul>
         <div class="posicao-btn-sair">
             <button class="btn_sair btn-green"><i class="fas fa-sign-out-alt"></i> </button>
@@ -60,7 +60,7 @@ session_start();
                 <div class="container">
                     <?php
                     include_once('conexao.php');
-                    $result_usuario = "SELECT * FROM tb_usuario ";
+                    $result_usuario = "SELECT * FROM tb_usuario ORDER BY unidade ASC";
                     $resultado_usuario = mysqli_query($conn, $result_usuario);
 
                     //Verificar se encontrou resultado na tabela "cadastrar_ativos"
@@ -72,7 +72,6 @@ session_start();
                                     <th>Usuário</th>
                                     <th>Unidade</th>
                                     <th>Login</th>
-                                    <th>CPF</th>
                                     <th>Nível de Acesso</th>
                                 </tr>
                             </thead>
@@ -83,11 +82,10 @@ session_start();
                                     <tr>
                                         <td><?php echo $row_usuario['pessoa']; ?></td>
                                         <td><?php echo $row_usuario['unidade']; ?></td>
-                                        <td><?php echo $row_usuario['criar']; ?></td>
-                                        <td><?php echo $row_usuario['documento']; ?></td>
+                                        <td><?php echo $row_usuario['login_usuario']; ?></td>
                                         <td><?php echo $row_usuario['nivel_acesso']; ?></td>
                                         <td>
-                                            <a href="">Editar</a> ||
+                                            <a href="">Editar</a> |
                                             <a href="">Deletar</a>
                                         </td>
                                     </tr>

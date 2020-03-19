@@ -48,7 +48,7 @@ session_start();
                     <li><a href='../administrador/criar_unidade.php'>Adicionar Unidade</a></li>
                 </ul>
             </li>
-            <li><a href='../administrador/estoque.php'>Estoque</a></li>
+            <li><a href='../administrador/estoque_home.php'>Materiais</a></li>
         </ul>
         <div class="posicao-btn-sair">
             <button class="btn_sair btn-green"><i class="fas fa-sign-out-alt"></i> </button>

@@ -50,7 +50,7 @@ session_start();
 					<li><a href='../administrador/criar_unidade.php'>Adicionar Unidade</a></li>
 				</ul>
 			</li>
-			<li><a href='../administrador/estoque.php'>Estoque</a></li>
+			<li><a href='../administrador/estoque_home.php'>Materiais</a></li>
 		</ul>
 		<div class="posicao-btn-sair">
 			<button class="btn_sair btn-green"><i class="fas fa-sign-out-alt"></i> </button>
@@ -98,13 +98,13 @@ session_start();
 				<div class="col-md-6">
 					<div class="form-group">
 						<label><i class="fas fa-unlock-alt"></i> Senha</label>
-						<input type="text" name="codigo" class="form-control" id="senha" placeholder="Senha entre 4 e 6 caracteres" maxlength="6">
+						<input type="text" name="senha" class="form-control" id="senha" placeholder="Senha entre 4 e 6 caracteres" maxlength="6">
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
 						<label><i class="far fa-address-card"></i> Login</label>
-						<input type="text" name="criar" class="form-control" id="login" placeholder="Login">
+						<input type="text" name="login_usuario" class="form-control" id="login" placeholder="Login">
 					</div>
 				</div>
 				<div class="col-md-6">
@@ -131,10 +131,10 @@ session_start();
 					<label for="exampleFormControlSelect1"><i class="fas fa-database"></i> Nível de acesso</label>
 					<select type="text" name="nivel_acesso" class="form-control" name="fabricante" id="formatar">
 						<option selected disabled>SELECIONAR</option>
-						<option value="1">Administrador</option>
-						<option value="2">Unidade</option>
-						<option value="3">Simpress</option>
-						<option value="4">Técnicos</option>
+						<option value="administrador">Administrador</option>
+						<option value="unidade">Unidade</option>
+						<option value="simpress">Simpress</option>
+						<option value="tecnico">Técnicos</option>
 					</select>
 				</div>
 			</div>
@@ -152,7 +152,7 @@ session_start();
 					</div>
 					<div class="col-md-4">
 						<div class="text-center">
-							<a href='../administrador/todos_usuarios.php' class="btn btn-outline-primary" id="bt_cadastrar"> Mais detalhes</a>  
+							<a href='../administrador/todos_usuarios.php' class="btn btn-outline-primary" id="bt_cadastrar"> Mais detalhes</a>
 						</div>
 					</div>
 				</div>

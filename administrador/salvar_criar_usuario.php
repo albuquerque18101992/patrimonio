@@ -21,8 +21,8 @@ include_once("conexao.php");
 		if (!$erro) {
 			$pessoa = $_POST['pessoa'];
 			$unidade = $_POST['unidade'];
-			$codigo = md5($_POST['codigo']);
-			$criar = $_POST['criar'];
+			$senha = md5($_POST['senha']);
+			$login_usuario = $_POST['login_usuario'];
 			$cracha = $_POST['cracha'];
 			$documento = $_POST['documento'];
 			$sexo = $_POST['sexo'];
@@ -32,13 +32,13 @@ include_once("conexao.php");
 			$result_ususario_acesso = "INSERT INTO tb_usuario 
 			(pessoa,
 			 unidade, 
-			 codigo, 
-			 criar, 
+			 senha, 
+			 login_usuario, 
 			 cracha, 
 			 documento, 
 			 sexo, 
 			 nivel_acesso) 
-			 VALUES ('$pessoa', '$unidade', '$codigo','$criar', '$cracha', '$documento', '$sexo', '$nivel_acesso')";
+			 VALUES ('$pessoa', '$unidade', '$senha','$login_usuario', '$cracha', '$documento', '$sexo', '$nivel_acesso')";
 
 			$resultado_usuario_acesso = mysqli_query($conn, $result_ususario_acesso);
 		}

@@ -21,9 +21,8 @@ session_start();
         $nome_produto = $_POST['nome_produto'];
         $codigo_mv = $_POST['codigo_mv'];
         $guardados = $_POST['guardados'];
-        $retirados = $_POST['retirados'];
 
-        $estoque_guardando = "INSERT INTO tb_estoque (nome_produto, codigo_mv, guardados, retirados) VALUES ( '$nome_produto', '$codigo_mv', '$guardados', '$retirados')";
+        $estoque_guardando = "INSERT INTO tb_estoque (nome_produto, codigo_mv, guardados) VALUES ( '$nome_produto', '$codigo_mv', '$guardados')";
 
         $estoque_guardando = mysqli_query($conn, $estoque_guardando);
 
@@ -41,7 +40,7 @@ session_start();
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-info" data-dismiss="modal">Corrigir Cadastro</button>
-                            <a href="estoque.php"><button type="button" class="btn btn-success"> Ok </button></a>
+                            <a href="estoque_home.php"><button type="button" class="btn btn-success"> Ok </button></a>
                         </div>
                     </div>
                 </div>
@@ -63,7 +62,7 @@ session_start();
                             <?php echo $nome_produto; ?>
                         </div>
                         <div class="modal-footer">
-                            <a href="estoque.php"><button type="button" class="btn btn-danger">Ok</button></a>
+                            <a href="estoque_home.php"><button type="button" class="btn btn-danger">Ok</button></a>
                         </div>
                     </div>
                 </div>

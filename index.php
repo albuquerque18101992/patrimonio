@@ -114,7 +114,7 @@ session_start();
                 <div class="row">
                     <div class="col-md-12">
                         <div class="input-group">
-                            <input class="form-control" type="text" placeholder="Login" name="login_usuario" style="border-right: none;">
+                            <input class="form-control" type="text" placeholder="Login" name="login_usuario" style="border-right: none;" required>
                             <div class="input-group-append">
                                 <div class="input-group-text" style="background-color: #FFF">
                                     <i class="far fa-user"></i>
@@ -154,16 +154,17 @@ session_start();
                 </div>
                 <br>
 
-                <!--Script abaixo emite a mensagem de erro "Usuario ou senha invalido"
-            <p class="text-center text-danger">
-                <?php
-                if (isset($_SESSION['loginErro'])) {
-                    echo $_SESSION['loginErro'];
-                    unset($_SESSION['loginErro']);
-                }
-                ?>
-            </p>
-            -->
+                <!--Script abaixo emite a mensagem de erro "Usuario ou senha invalido"-->
+                <p class="text-center text-danger">
+                    <?php
+                    if (isset($_SESSION['loginErro'])) {
+                        echo $_SESSION['loginErro'];
+                        unset($_SESSION['loginErro']);
+                    }
+                    ?>
+                </p>
+
+
             </div>
         </div>
     </form>

@@ -53,7 +53,7 @@ session_start();
                     <li><a href='../administrador/criar_unidade.php'>Adicionar Unidade</a></li>
                 </ul>
             </li>
-            <li><a href='../administrador/estoque.php'>Estoque</a></li>
+            <li><a href='../administrador/estoque_home.php'>Materiais</a></li>
         </ul>
         <div class="posicao-btn-sair">
             <button class="btn_sair btn-green"><i class="fas fa-sign-out-alt"></i> </button>
@@ -65,9 +65,6 @@ session_start();
             <div class="col-md-12">
                 <img src='../imagens/logo_os.png' alt="OS-SantaCatarina" width="100%" height="100%">
             </div>
-        </div>
-        <div class="posicao-btn-sair">
-            <button class="btn_sair btn-green"><i class="fas fa-sign-out-alt"></i> </button>
         </div>
         <hr>
         <form method="POST" action="salvar_cadastar.php" autocomplete="off">
@@ -239,7 +236,7 @@ session_start();
                     <div class="row">
                         <div class="col-md-12">
                             <label for="">Informações Pertinentes ao Equipamento</label>
-                            <textarea type="text-area" name="descricoes" placeholder="Observções sobre o equipamento ." style="width:70%;height:50px; border-radius:5px"></textarea>
+                            <textarea type="text-area" name="descricoes" maxlength="280" placeholder="Observções sobre o equipamento ." style="width:80%;height:80px; border-radius:5px"></textarea>
                         </div>
                     </div>
                 </div>
