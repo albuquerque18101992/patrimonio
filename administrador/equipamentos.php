@@ -96,14 +96,23 @@ session_start();
                                                 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-lg" role="document">
                                                         <div class="modal-content">
+														<br>
                                                             INFORMAÇÕES ...
-
+															<br><br><br><br><br><br><br><br><br><br><br><br><br>
                                                             modal ...
+														<br>
+														<br>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <a class="btn btn-outline-success btn-sm" href="#">Editar</a>
                                                 <a class="btn btn-outline-danger btn-sm" href="processa_delete_equipamento.php" role="button" data-toggle="modal" data-target="#exampleModal">Apagar</a>
+												
+												<?php
+												echo "<a href='processa_delete_equipamento.php?id=" . $row_usuario['id'] . "' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>Apagar</a><br><hr>";
+												?>
+												
+												
                                                 <!-- Modal -->
                                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog" role="document">
@@ -125,16 +134,6 @@ session_start();
                                                     </div>
                                                 </div>
                                             </span>
-                                            <div class="dropdown d-block d-md-none">
-                                                <button class="btn btn- btn-outline-primary dropdown-toggle btn-sm" type="button" id="acoesListar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    Ações
-                                                </button>
-                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
-                                                    <a class="dropdown-item" href="#">Detalhes</a>
-                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target=".bd-example-modal-xl">Editar</a>
-                                                    <a class="dropdown-item" href="processa_delete_equipamento.php" data-toggle="modal" data-target="#exampleModal">Apagar</a>
-                                                </div>
-                                            </div>
                                         </td>
                                         
                                     </tr>
