@@ -69,7 +69,6 @@ session_start();
         <div class="titulo">
             <h2>Cadastrar Impressoras</h2>
         </div>
-        <hr>
         <form method="POST" action="salvar_impressora.php" autocomplete="off">
             <div class="select-caixas">
                 <div class="row">
@@ -211,7 +210,6 @@ session_start();
                 </div>
             </div>
         </form>
-        <hr>
     </div>
 
 

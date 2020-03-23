@@ -66,7 +66,10 @@ session_start();
                 <img src='../imagens/logo_os.png' alt="OS-SantaCatarina" width="100%" height="100%">
             </div>
         </div>
-        <hr>
+        <div class="titulo">
+            <h2>Cadastrar equipamento</h2>
+        </div>
+        
         <form method="POST" action="salvar_cadastar.php" autocomplete="off">
             <div class="select-caixas">
                 <div class="row">
@@ -256,9 +259,7 @@ session_start();
                 </div>
             </div>
         </form>
-        <hr>
     </div>
-
 
     <div class="dmr">
         Sistema desenvolvido por Paulo Albuquerque - 2019 .

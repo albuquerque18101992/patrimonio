@@ -66,13 +66,14 @@ session_start();
                     //Verificar se encontrou resultado na tabela "cadastrar_ativos"
                     if (($resultado_usuario) and ($resultado_usuario->num_rows != 0)) {
                     ?>
-                        <table class="table table-hover ">
+                        <table class="table table-hover text-center">
                             <thead>
                                 <tr>
                                     <th>Localização</th>
                                     <th>Marca</th>
                                     <th>Contrato</th>
                                     <th>Modelo</th>
+                                    <th>Ações</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -85,8 +86,53 @@ session_start();
                                         <td><?php echo $row_impressoras['contrato']; ?></td>
                                         <td><?php echo $row_impressoras['modelo']; ?></td>
                                         <td>
-                                            <a href="">Editar</a> |
-                                            <a href="">Deletar</a>
+                                            <span class="d-none d-md-block">
+                                                <a class="btn btn-outline-info btn-sm" href="#" role="button" data-toggle="modal" data-target=".bd-example-modal-lg">Detalhes</a>
+                                                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-lg" role="document">
+                                                        <div class="modal-content">
+                                                            INFORMAÇÕES ...
+
+                                                            modal ...
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <a class="btn btn-outline-success btn-sm" href="#">Editar</a>
+
+                                                <a class="btn btn-outline-danger btn-sm" href="#" role="button" data-toggle="modal" data-target="#exampleModal">Apagar</a>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header bg-danger text-white">
+                                                                <h5 class="modal-title" id="exampleModalLabel">EXCLUIR ARQUIVO</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                Você tem certeza que deseja deletar o item selecionado ?
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-success" data-dismiss="modal">Voltar</button>
+                                                                <button type="button" class="btn btn-danger">Apagar</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                            <div class="dropdown d-block d-md-none">
+                                                <button class="btn btn- btn-outline-primary dropdown-toggle btn-sm" type="button" id="acoesListar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Ações
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
+                                                    <a class="dropdown-item" href="#">Detalhes</a>
+                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target=".bd-example-modal-xl">Editar</a>
+                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">Apagar</a>
+                                                </div>
+                                            </div>
+
                                         </td>
                                     </tr>
                                 <?php

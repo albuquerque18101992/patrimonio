@@ -120,7 +120,7 @@ session_start();
                 <form method="POST" action="salvar_estoque.php" autocomplete="off">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="titulo">
+                            <div class="titulo" style="background-color: #28a745">
                                 <h4>Produtos armazenados em estoque para uso posteriores.</h4>
                             </div>
                             <div class="row">
@@ -144,7 +144,7 @@ session_start();
                             <div class="cadastrar">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <input class="btn btn-outline-primary" id="bt_cadastrar" type="submit" name="Salvar" value="Salvar entrada">
+                                        <input class="btn btn-outline-success" id="bt_cadastrar" type="submit" name="Salvar" value="Salvar entrada">
                                     </div>
                                 </div>
                             </div>
@@ -157,7 +157,7 @@ session_start();
                 <form method="POST" action="" autocomplete="off">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="titulo">
+                            <div class="titulo" style="background-color: #dc3545">
                                 <h4>Produtos Retirados do estoque para uso.</h4>
                             </div>
                             <div class="row">
@@ -175,7 +175,7 @@ session_start();
                                 </div>
                                 <div class="col-md-2">
                                     <label for=""> <i class="fas fa-hands-helping"></i> N° chamado</label>
-                                    <input type="text" class="form-control" placeholder="GLPI" name="guardados">
+                                    <input type="text" class="form-control" maxlength="5" placeholder="GLPI" name="guardados">
                                 </div>
                             </div>
                             <div class="cadastrar">

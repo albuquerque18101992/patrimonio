@@ -169,7 +169,7 @@ session_start();
         </div>
     </form>
     <div class="dmr">
-        Sistema de equipamentos do Setor de Tecnologia da Informação. Para Contatos (11)5613-4444 Ramal 109
+        © 2019 - 2020 Paulo Albuquerque
     </div>
 
 
