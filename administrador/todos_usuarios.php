@@ -83,7 +83,7 @@ session_start();
                                     <tr>
                                         <td><?php echo $row_usuario['pessoa']; ?></td>
                                         <td><?php echo $row_usuario['unidade']; ?></td>
-                                        <td><?php echo $row_usuario['criar']; ?></td>
+                                        <td><?php echo $row_usuario['login_usuario']; ?></td>
                                         <td><?php echo $row_usuario['nivel_acesso']; ?></td>
                                         <td>
                                             <span class="d-none d-md-block">

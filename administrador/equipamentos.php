@@ -118,7 +118,7 @@ session_start();
                                                 <a class="btn btn-outline-danger btn-sm" href="processa_delete_equipamento.php" role="button" data-toggle="modal" data-target="#exampleModal">Apagar</a>
 												
 												<?php
-												echo "<a href='processa_delete_equipamento.php?id=" . $row_usuario['id'] . "' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>Apagar</a><br><hr>";
+												echo "<a href='processa_delete_equipamento.php?id=" . $row_usuario['id'] . "' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>Apagar</a>";
 												?>
 												
 												

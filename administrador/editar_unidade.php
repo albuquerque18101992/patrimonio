@@ -1,5 +1,11 @@
 <?php
 session_start();
+include_once('conexao.php');
+
+$result_unidade = "SELECT * FROM tb_unidades WHERE id_unidade = '2' ";
+$resultado_unidade = mysqli_query ($conn, $result_unidade);
+$row_unidade = mysqli_fetch_assoc($resultado_unidade);
+
 ?>
 
 <!doctype html>
@@ -24,7 +30,7 @@ session_start();
     <!--Icone da aba, aba do navegador-->
     <link rel="icon" href='../imagens/logo_aba_engrenagem.png'>
 
-    <title>Criar Unidade</title>
+    <title>Editar Unidade</title>
 </head>
 
 <body>
@@ -68,22 +74,27 @@ session_start();
         <div class="titulo" style="background-color: #28a745;">
             <h2>Editar Unidade</h2>
         </div>
-        <form method="POST" action="salvar_criar_unidade.php" autocomplete="off">
+        <form method="POST" action="processa_editar_criar_unidade.php" autocomplete="off">
+		    
+                
+                    <input type="hidden" name="id_unidade" value="<?php echo $row_unidade['id_unidade']; ?>">
+                
+            
             <div class="row">
                 <div class="col-md-12">
                     <label for=""><i class="fas fa-university"></i> Nome da unidade</label>
-                    <input type="text" name="nome_da_unidade" class="form-control" id="exampleInputEmail1" placeholder="Ex: UBS Mar Paulista, AMA Jd Alfredo " required>
+                    <input type="text" name="nome_da_unidade" class="form-control" id="exampleInputEmail1" placeholder="Ex: UBS Mar Paulista, AMA Jd Alfredo " value="<?php echo $row_unidade['nome_da_unidade']; ?>" required>
                 </div>
             </div>
             <br>
             <div class="row">
                 <div class="col-md-6">
                     <label for=""><i class="fas fa-user-tie"></i> Responsável / Gerente</label>
-                    <input type="text" name="nome_gerente" class="form-control" id="exampleInputEmail1" placeholder="Nome">
+                    <input type="text" name="nome_gerente" class="form-control" id="exampleInputEmail1" placeholder="Nome" value="<?php echo $row_unidade['nome_gerente']; ?>">
                 </div>
                 <div class="col-md-6">
-                    <label for=""><i class="fas fa-sort-numeric-up"></i> CNES</label>
-                    <input type="text" name="cnes" class="form-control" id="exampleInputEmail1" placeholder="Cadastro Nacional de Estabelecimentos de Saúde" required>
+                    <label><i class="fas fa-sort-numeric-up"></i> CNES</label>
+                    <input type="text" name="cnes"  class="form-control" id="exampleInputEmail1" placeholder="Cadastro Nacional de Estabelecimentos de Saúde" value="<?php echo $row_unidade['cnes']; ?>" required>
                 </div>
             </div>
 

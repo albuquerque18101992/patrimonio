@@ -23,7 +23,7 @@ session_start();
 	<!--Icone da aba, aba do navegador-->
 	<link rel="icon" href='../imagens/logo_aba_engrenagem.png'>
 
-	<title>Criar Usuário</title>
+	<title>Editar Usuário</title>
 
 </head>
 
