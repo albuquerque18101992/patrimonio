@@ -1,5 +1,10 @@
 <?php
 session_start();
+include_once('conexao.php');
+
+$result_usuario = "SELECT * FROM tb_usuario WHERE id_usuario = '1' ";
+$resultado_usuario = mysqli_query ($conn, $result_usuario);
+$row_usuario = mysqli_fetch_assoc($resultado_usuario);
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +20,7 @@ session_start();
 
 	<!--Link Font Awesome-->
 	<script src="https://kit.fontawesome.com/e7b4566ef7.js" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
 
 	<!--Style-->
@@ -69,21 +75,22 @@ session_start();
 			<h2>Editando Usuário</h2>
 		</div>
 
-		<form class="form-horizontal" action="salvar_criar_usuario.php" method="POST" autocomplete="off">
+		<form class="form-horizontal" action="processa_editar_criar_usuario.php" method="POST" autocomplete="off">
+		<input type="hidden" name="id_usuario" value="<?php echo $row_usuario['id_usuario']; ?>">
 			<div class="row">
 				<div class="col-md-12">
 					<div class="form-group">
 						<label><i class="fas fa-user-plus"></i> Nome do Usuário</label>
-						<input type="text" name="pessoa" class="form-control" id="usuario" placeholder="Usuário" required>
+						<input type="text" name="pessoa" class="form-control" id="usuario" placeholder="Usuário" value="<?php echo $row_usuario['pessoa']; ?>" required>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="form-group">
-						<label><i class="fas fa-university"></i> Unidade</label require>
-						<select type="text" name="unidade" class="form-control" id="unidade" onclick="formatar()">
-							<option selected disabled>Escolha Unidade</option required>
+						<label><i class="fas fa-university"></i> Unidade</label required>
+						<select type="text" name="unidade" class="form-control" id="unidade" onclick="formatar()" value="<?php echo $row_usuario['nome_da_unidade']; ?>">
+							<option selected disabled>Escolha Unidade</option>
 							<?php
 							include_once("conexao.php");
 							$consult = "SELECT * FROM tb_unidades WHERE cnes ORDER BY nome_da_unidade";
@@ -106,32 +113,32 @@ session_start();
 				<div class="col-md-6">
 					<div class="form-group">
 						<label><i class="far fa-address-card"></i> Login</label>
-						<input type="text" name="login_usuario" class="form-control" id="login" placeholder="Login">
+						<input type="text" name="login_usuario" class="form-control" id="login" placeholder="Login" value="<?php echo $row_usuario['login_usuario']; ?>">
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
 						<label><i class="fas fa-id-badge"></i> Número Crachá</label>
-						<input type="text" name="cracha" class="form-control" id="cracha" placeholder="Matrícula">
+						<input type="text" name="cracha" class="form-control" id="cracha" placeholder="Matrícula" maxlength="12" value="<?php echo $row_usuario ['cracha']?>">
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
 						<label><i class="fas fa-sort-numeric-up"></i> CPF</label>
-						<input type="text" name="documento" class="form-control" maxlength="14" id="cpf" placeholder="CPF" onkeypress="this.value = FormataCpf(event)" onpaste="return false;" required>
+						<input type="text" name="documento" class="form-control" maxlength="14" id="cpf" placeholder="CPF" onkeypress="this.value = FormataCpf(event)" onpaste="return false;" value="<?php echo $row_usuario ['documento'] ?>" required>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<label for="exampleFormControlSelect1"><i class="fas fa-venus-mars"></i> Sexo</label>
-					<select type="text" name="sexo" class="form-control">
+					<select type="text" name="sexo" class="form-control" value="<?php echo $row_usuario ['sexo'] ?>">
 						<option selected disabled>SELECIONAR</option>
-						<option value="1">Masculino</option>
-						<option value="2">Feminino</option>
+						<option value="masculino">Masculino</option>
+						<option value="feminino">Feminino</option>
 					</select>
 				</div>
 				<div class="col-md-6">
 					<label for="exampleFormControlSelect1"><i class="fas fa-database"></i> Nível de acesso</label>
-					<select type="text" name="nivel_acesso" class="form-control" name="fabricante" id="formatar">
+					<select type="text" name="nivel_acesso" class="form-control" name="fabricante" id="formatar" value="<?php echo $row_usuario['nivel_acesso']; ?>>
 						<option selected disabled>SELECIONAR</option>
 						<option value="administrador">Administrador</option>
 						<option value="unidade">Unidade</option>
@@ -142,14 +149,9 @@ session_start();
 			</div>
 			<div class="cadastrar">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-12">
 						<div class="text-center">
 							<input class="btn btn-outline-success" id="bt_cadastrar" type="submit" name="submit" value="Dados alterados">
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="text-center">
-							<input class="btn btn-outline-primary" id="bt_cadastrar" type="reset" value="Limpar campos">
 						</div>
 					</div>
 				</div>

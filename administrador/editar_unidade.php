@@ -5,10 +5,9 @@ include_once('conexao.php');
 $result_unidade = "SELECT * FROM tb_unidades WHERE id_unidade = '2' ";
 $resultado_unidade = mysqli_query ($conn, $result_unidade);
 $row_unidade = mysqli_fetch_assoc($resultado_unidade);
-
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -75,11 +74,7 @@ $row_unidade = mysqli_fetch_assoc($resultado_unidade);
             <h2>Editar Unidade</h2>
         </div>
         <form method="POST" action="processa_editar_criar_unidade.php" autocomplete="off">
-		    
-                
-                    <input type="hidden" name="id_unidade" value="<?php echo $row_unidade['id_unidade']; ?>">
-                
-            
+               <input type="hidden" name="id_unidade" value="<?php echo $row_unidade['id_unidade']; ?>">
             <div class="row">
                 <div class="col-md-12">
                     <label for=""><i class="fas fa-university"></i> Nome da unidade</label>
@@ -100,14 +95,9 @@ $row_unidade = mysqli_fetch_assoc($resultado_unidade);
 
             <div class="cadastrar">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="text-center">
                             <input class="btn btn-outline-success" id="bt_cadastrar" type="submit" value="Dados alterados">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="text-center">
-                            <input class="btn btn-outline-primary" id="bt_cadastrar" type="reset" value="Limpar">
                         </div>
                     </div>
                 </div>

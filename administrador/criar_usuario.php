@@ -110,7 +110,7 @@ session_start();
 				<div class="col-md-6">
 					<div class="form-group">
 						<label><i class="fas fa-id-badge"></i> Número Crachá</label>
-						<input type="text" name="cracha" class="form-control" id="cracha" placeholder="Matrícula">
+						<input type="text" name="cracha" class="form-control" id="cracha" placeholder="Matrícula" maxlength="12">
 					</div>
 				</div>
 				<div class="col-md-6">
