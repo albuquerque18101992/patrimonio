@@ -96,17 +96,32 @@ session_start();
                                                 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-lg" role="document">
                                                         <div class="modal-content">
+<<<<<<< HEAD
                                                             <br>
                                                             INFORMAÇÕES ...
                                                             <br><br><br><br><br><br><br><br><br><br><br><br><br>
                                                             modal ...
                                                             <br>
                                                             <br>
+=======
+														<br>
+                                                            INFORMAÇÕES ...
+															<br><br><br><br><br><br><br><br><br><br><br><br><br>
+                                                            modal ...
+														<br>
+														<br>
+>>>>>>> b21dedb7c5420c738dc53915304ba95377e8cb9d
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <a class="btn btn-outline-success btn-sm" href="#" >Editar</a>
                                                 <a class="btn btn-outline-danger btn-sm" href="processa_delete_equipamento.php" role="button" data-toggle="modal" data-target="#exampleModal">Apagar</a>
+												
+												<?php
+												echo "<a href='processa_delete_equipamento.php?id=" . $row_usuario['id'] . "' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>Apagar</a><br><hr>";
+												?>
+												
+												
                                                 <!-- Modal -->
                                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog" role="document">

@@ -2,7 +2,7 @@
 
 $servidor = "localhost";
 $usuario = "root";
-$senha = "root";
+$senha = "";
 $dbname = "bd_patrimonio";
 
 //Criando a conexão.
