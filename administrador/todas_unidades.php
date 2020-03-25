@@ -91,14 +91,17 @@ session_start();
                                                 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-lg" role="document">
                                                         <div class="modal-content">
+                                                            <br>
                                                             INFORMAÇÕES ...
-
+                                                            <br><br><br><br><br>
                                                             modal ...
+                                                            <br>
+                                                            <br>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <a class="btn btn-outline-success btn-sm" href="#">Editar</a>
+                                                <a class="btn btn-outline-success btn-sm" href="../administrador/editar_unidade.php">Editar</a>
 
                                                 <a class="btn btn-outline-danger btn-sm" href="#" role="button" data-toggle="modal" data-target="#exampleModal">Apagar</a>
                                                 <!-- Modal -->

@@ -106,9 +106,10 @@ session_start();
                                                     </div>
                                                 </div>
 
-                                                <a class="btn btn-outline-success btn-sm" href= "../administrador/editar_usuario.php">Editar</a>
+                                                <a class="btn btn-outline-success btn-sm" href="../administrador/editar_usuario.php">Editar</a>
 
                                                 <a class="btn btn-outline-danger btn-sm" href="#" role="button" data-toggle="modal" data-target="#exampleModal">Apagar</a>
+
                                                 <!-- Modal -->
                                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog" role="document">
@@ -124,7 +125,11 @@ session_start();
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-success" data-dismiss="modal">Voltar</button>
-                                                                <button type="button" class="btn btn-danger">Apagar</button>
+                                                                <div class="btn btn-danger">
+                                                                    <?php
+                                                                    echo "<a href='processa_delete_equipamento.php?id=" . $row_usuario['id_usuario'] . "' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>Apagar</a>";
+                                                                    ?>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>

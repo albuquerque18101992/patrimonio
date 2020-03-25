@@ -138,7 +138,7 @@ session_start();
                                 </div>
                                 <div class="col-md-2">
                                     <label for=""> <i class="fas fa-dollar-sign"></i> Valor</label>
-                                    <input type="text" class="form-control" placeholder="$$$" name="">
+                                    <input type="text" class="form-control" placeholder="$$$" name="valor_material">
                                 </div>
                             </div>
                             <div class="cadastrar">

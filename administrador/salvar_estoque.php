@@ -21,8 +21,9 @@ session_start();
         $nome_produto = $_POST['nome_produto'];
         $codigo_mv = $_POST['codigo_mv'];
         $guardados = $_POST['guardados'];
+        $valor_material = $_POST['valor_material'];
 
-        $estoque_guardando = "INSERT INTO tb_estoque (nome_produto, codigo_mv, guardados) VALUES ( '$nome_produto', '$codigo_mv', '$guardados')";
+        $estoque_guardando = "INSERT INTO tb_estoque (nome_produto, codigo_mv, guardados, valor_material) VALUES ( '$nome_produto', '$codigo_mv', '$guardados', '$valor_material')";
 
         $estoque_guardando = mysqli_query($conn, $estoque_guardando);
 
