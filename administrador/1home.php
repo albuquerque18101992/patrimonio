@@ -68,9 +68,9 @@ session_start();
 
         <div class="container-fluid">
 
-            <div class="titulo">
-                <h4>Sistema para armazenamento das informações dos computadores e demais equipamentos de informática . </h4>
-            </div>
+            
+                <h4 class="display-4 text-center">Sistema para armazenamento das informações dos computadores e demais equipamentos de informática . </h4>
+            
 
             <div class="paragrafos">
                 <p> Sistema Criado para armazenamento, consulta e conhecimento das máquinas da tecnologia da informação das unidades .
@@ -82,9 +82,9 @@ session_start();
             </div>
         </div>
 
-        <div class="titulo">
-            <h2>Algumas das ferramentas que a equipe de tecnologia da informação gerencia e mantem sempre em funcionamento .</h2>
-        </div>
+        
+            <h2 class="text-center">Algumas das ferramentas que a equipe de tecnologia da informação gerencia e mantem sempre em funcionamento .</h2>
+        
 
         <br>
 

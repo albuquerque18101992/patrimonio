@@ -108,7 +108,7 @@ session_start();
             </div>
         </form>
     </div>
-    <br>
+    
 
     <div class="dmr">
         Sistema desenvolvido por Paulo Albuquerque - 2019 .

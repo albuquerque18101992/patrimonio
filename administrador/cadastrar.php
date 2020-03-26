@@ -69,7 +69,6 @@ session_start();
         <div class="titulo">
             <h2>Cadastrar equipamento</h2>
         </div>
-
         <form method="POST" action="salvar_cadastar.php" autocomplete="off">
             <div class="select-caixas">
                 <div class="row">

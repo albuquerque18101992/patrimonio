@@ -65,6 +65,7 @@ session_start();
         </div>
         <div class="row">
             <div class="col-md-12">
+            <h1 class="display-4">Hello World!</h1>
                 <div class="pos-f-t">
                     <nav class="navbar navbar-dark bg-dark">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">

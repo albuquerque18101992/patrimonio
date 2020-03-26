@@ -22,7 +22,7 @@ session_start();
     <!--Icone da aba, aba do navegador-->
     <link rel="icon" href='../imagens/logo_aba_engrenagem.png'>
 
-    <title>Patrimônio</title>
+    <title>Equipamentos</title>
 </head>
 
 <body>
@@ -69,8 +69,8 @@ session_start();
                     //Verificar se encontrou resultado na tabela "cadastrar_ativos"
                     if (($resultado_usuario) and ($resultado_usuario->num_rows != 0)) {
                     ?>
-                        <table class="table table-hover text-center">
-                            <thead>
+                        <table class="table table-hover table-sm text-center table-bordered table-responsive-lg">
+                            <thead class="thead-dark">
                                 <tr>
                                     <th>Localização</th>
                                     <th>Fabricante</th>
@@ -96,32 +96,31 @@ session_start();
                                                 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-lg" role="document">
                                                         <div class="modal-content">
-<<<<<<< HEAD
-                                                            <br>
-                                                            INFORMAÇÕES ...
-                                                            <br><br><br><br><br><br><br><br><br><br><br><br><br>
-                                                            modal ...
-                                                            <br>
-                                                            <br>
-=======
-														<br>
-                                                            INFORMAÇÕES ...
-															<br><br><br><br><br><br><br><br><br><br><br><br><br>
-                                                            modal ...
-														<br>
-														<br>
->>>>>>> b21dedb7c5420c738dc53915304ba95377e8cb9d
+                                                            <<<<<<< HEAD <br>
+                                                                INFORMAÇÕES ...
+                                                                <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                                                                modal ...
+                                                                <br>
+                                                                <br>
+                                                                =======
+                                                                <br>
+                                                                INFORMAÇÕES ...
+                                                                <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                                                                modal ...
+                                                                <br>
+                                                                <br>
+                                                                >>>>>>> b21dedb7c5420c738dc53915304ba95377e8cb9d
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <a class="btn btn-outline-success btn-sm" href="#" >Editar</a>
+                                                <a class="btn btn-outline-success btn-sm" href="#">Editar</a>
                                                 <a class="btn btn-outline-danger btn-sm" href="processa_delete_equipamento.php" role="button" data-toggle="modal" data-target="#exampleModal">Apagar</a>
-												
-												<?php
-												echo "<a href='processa_delete_equipamento.php?id=" . $row_usuario['id'] . "' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>Apagar</a>";
-												?>
-												
-												
+
+                                                <?php
+                                                echo "<a href='processa_delete_equipamento.php?id=" . $row_usuario['id'] . "' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>Apagar</a>";
+                                                ?>
+
+
                                                 <!-- Modal -->
                                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog" role="document">
@@ -160,6 +159,21 @@ session_start();
                     }
 
                     ?>
+                    <nav aria-label="">
+                        <ul class="pagination pagination-sm justify-content-center">
+                            <li class="page-item">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>

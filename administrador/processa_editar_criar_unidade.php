@@ -16,8 +16,8 @@ include_once("conexao.php");
 
 <body>
     <div class="container theme-showcase" role="main">
-        <?php		
-		$id_unidade = filter_input(INPUT_POST, 'id_unidade', FILTER_SANITIZE_NUMBER_INT);
+        <?php
+        $id_unidade = filter_input(INPUT_POST, 'id_unidade', FILTER_SANITIZE_NUMBER_INT);
         $nome_da_unidade = filter_input(INPUT_POST, 'nome_da_unidade', FILTER_SANITIZE_STRING);
         $nome_gerente = filter_input(INPUT_POST, 'nome_gerente', FILTER_SANITIZE_STRING);
         $cnes = filter_input(INPUT_POST, 'cnes', FILTER_SANITIZE_STRING);
@@ -74,4 +74,5 @@ include_once("conexao.php");
         <?php } ?>
     </div>
 </body>
+
 </html>

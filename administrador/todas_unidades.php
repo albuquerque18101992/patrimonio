@@ -22,7 +22,7 @@ session_start();
     <!--Icone da aba, aba do navegador-->
     <link rel="icon" href='../imagens/logo_aba_engrenagem.png'>
 
-    <title>Patrimônio</title>
+    <title>Unidades</title>
 </head>
 
 <body>
@@ -60,14 +60,14 @@ session_start();
                 <div class="container">
                     <?php
                     include_once('conexao.php');
-                    $result_usuario = "SELECT * FROM tb_unidades ";
+                    $result_usuario = "SELECT * FROM tb_unidades ORDER BY nome_da_unidade ASC";
                     $resultado_usuario = mysqli_query($conn, $result_usuario);
 
                     //Verificar se encontrou resultado na tabela "cadastrar_ativos"
                     if (($resultado_usuario) and ($resultado_usuario->num_rows != 0)) {
                     ?>
-                        <table class="table table-hover text-center">
-                            <thead>
+                        <table class="table table-hover table-sm text-center table-bordered table-responsive-lg">
+                            <thead class="thead-dark">
                                 <tr>
                                     <th>ID Unidade</th>
                                     <th>Nome da Unidade</th>
@@ -148,6 +148,21 @@ session_start();
                     }
 
                     ?>
+                    <nav aria-label="">
+                        <ul class="pagination pagination-sm justify-content-center">
+                            <li class="page-item">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>

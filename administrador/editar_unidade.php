@@ -2,8 +2,8 @@
 session_start();
 include_once('conexao.php');
 
-$result_unidade = "SELECT * FROM tb_unidades WHERE id_unidade = '2' ";
-$resultado_unidade = mysqli_query ($conn, $result_unidade);
+$result_unidade = "SELECT * FROM tb_unidades WHERE id_unidade = '1' ";
+$resultado_unidade = mysqli_query($conn, $result_unidade);
 $row_unidade = mysqli_fetch_assoc($resultado_unidade);
 ?>
 
@@ -73,8 +73,9 @@ $row_unidade = mysqli_fetch_assoc($resultado_unidade);
         <div class="titulo" style="background-color: #28a745;">
             <h2>Editar Unidade</h2>
         </div>
+
         <form method="POST" action="processa_editar_criar_unidade.php" autocomplete="off">
-               <input type="hidden" name="id_unidade" value="<?php echo $row_unidade['id_unidade']; ?>">
+            <input type="hidden" name="id_unidade" value="<?php echo $row_unidade['id_unidade']; ?>">
             <div class="row">
                 <div class="col-md-12">
                     <label for=""><i class="fas fa-university"></i> Nome da unidade</label>
@@ -89,7 +90,7 @@ $row_unidade = mysqli_fetch_assoc($resultado_unidade);
                 </div>
                 <div class="col-md-6">
                     <label><i class="fas fa-sort-numeric-up"></i> CNES</label>
-                    <input type="text" name="cnes"  class="form-control" id="exampleInputEmail1" placeholder="Cadastro Nacional de Estabelecimentos de Saúde" value="<?php echo $row_unidade['cnes']; ?>" required>
+                    <input type="text" name="cnes" class="form-control" id="exampleInputEmail1" placeholder="Cadastro Nacional de Estabelecimentos de Saúde" value="<?php echo $row_unidade['cnes']; ?>" required>
                 </div>
             </div>
 
@@ -104,7 +105,7 @@ $row_unidade = mysqli_fetch_assoc($resultado_unidade);
             </div>
         </form>
     </div>
-    <br>
+    
 
     <div class="dmr">
         Sistema desenvolvido por Paulo Albuquerque - 2019 .

@@ -123,8 +123,8 @@ session_start();
 					<label for="exampleFormControlSelect1"><i class="fas fa-venus-mars"></i> Sexo</label>
 					<select type="text" name="sexo" class="form-control">
 						<option selected disabled>SELECIONAR</option>
-						<option value="1">Masculino</option>
-						<option value="2">Feminino</option>
+						<option value="masculino">Masculino</option>
+						<option value="feminino">Feminino</option>
 					</select>
 				</div>
 				<div class="col-md-6">

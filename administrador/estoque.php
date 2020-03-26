@@ -80,8 +80,8 @@ session_start();
                 //Verificar se encontrou resultado na tabela "usuarios"
                 if (($resultado_usuario) and ($resultado_usuario->num_rows != 0)) {
                 ?>
-                    <table class="table table-hover text-center">
-                        <thead>
+                    <table class="table table-hover table-sm text-center table-bordered table-responsive-lg">
+                        <thead class="thead-dark">
                             <tr>
                                 <th>Código dentro do MV</th>
                                 <th>Produto</th>

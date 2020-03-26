@@ -3,7 +3,7 @@ session_start();
 include_once('conexao.php');
 
 $result_usuario = "SELECT * FROM tb_usuario WHERE id_usuario = '1' ";
-$resultado_usuario = mysqli_query ($conn, $result_usuario);
+$resultado_usuario = mysqli_query($conn, $result_usuario);
 $row_usuario = mysqli_fetch_assoc($resultado_usuario);
 ?>
 
@@ -76,7 +76,7 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuario);
 		</div>
 
 		<form class="form-horizontal" action="processa_editar_criar_usuario.php" method="POST" autocomplete="off">
-		<input type="hidden" name="id_usuario" value="<?php echo $row_usuario['id_usuario']; ?>">
+			<input type="hidden" name="id_usuario" value="<?php echo $row_usuario['id_usuario']; ?>">
 			<div class="row">
 				<div class="col-md-12">
 					<div class="form-group">
@@ -89,7 +89,7 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuario);
 				<div class="col-md-12">
 					<div class="form-group">
 						<label><i class="fas fa-university"></i> Unidade</label required>
-						<select type="text" name="unidade" class="form-control" id="unidade" onclick="formatar()" value="<?php echo $row_usuario['nome_da_unidade']; ?>">
+						<select type="text" name="unidade" class="form-control" id="unidade" onclick="formatar()">
 							<option selected disabled>Escolha Unidade</option>
 							<?php
 							include_once("conexao.php");
@@ -119,18 +119,18 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuario);
 				<div class="col-md-6">
 					<div class="form-group">
 						<label><i class="fas fa-id-badge"></i> Número Crachá</label>
-						<input type="text" name="cracha" class="form-control" id="cracha" placeholder="Matrícula" maxlength="12" value="<?php echo $row_usuario ['cracha']?>">
+						<input type="text" name="cracha" class="form-control" id="cracha" placeholder="Matrícula" maxlength="12" value="<?php echo $row_usuario['cracha'] ?>">
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
 						<label><i class="fas fa-sort-numeric-up"></i> CPF</label>
-						<input type="text" name="documento" class="form-control" maxlength="14" id="cpf" placeholder="CPF" onkeypress="this.value = FormataCpf(event)" onpaste="return false;" value="<?php echo $row_usuario ['documento'] ?>" required>
+						<input type="text" name="documento" class="form-control" maxlength="14" id="documento" placeholder="CPF" onkeypress="this.value = FormataCpf(event)" onpaste="return false;" value="<?php echo $row_usuario['documento'] ?>" required>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<label for="exampleFormControlSelect1"><i class="fas fa-venus-mars"></i> Sexo</label>
-					<select type="text" name="sexo" class="form-control" value="<?php echo $row_usuario ['sexo'] ?>">
+					<select type="text" name="sexo" class="form-control">
 						<option selected disabled>SELECIONAR</option>
 						<option value="masculino">Masculino</option>
 						<option value="feminino">Feminino</option>
@@ -138,7 +138,7 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuario);
 				</div>
 				<div class="col-md-6">
 					<label for="exampleFormControlSelect1"><i class="fas fa-database"></i> Nível de acesso</label>
-					<select type="text" name="nivel_acesso" class="form-control" name="fabricante" id="formatar" value="<?php echo $row_usuario['nivel_acesso']; ?>>
+					<select type="text" name="nivel_acesso" class="form-control" name="fabricante" id="formatar">
 						<option selected disabled>SELECIONAR</option>
 						<option value="administrador">Administrador</option>
 						<option value="unidade">Unidade</option>
@@ -158,7 +158,6 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuario);
 			</div>
 		</form>
 	</div>
-	<br>
 
 	<div class="dmr">
 		Sistema desenvolvido por Paulo Albuquerque - 2019 .

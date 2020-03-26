@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25-Mar-2020 às 03:18
+-- Tempo de geração: 26-Mar-2020 às 03:04
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.1
 
@@ -42,15 +42,6 @@ CREATE TABLE `cadastrar_ativos` (
   `descricoes` varchar(280) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Extraindo dados da tabela `cadastrar_ativos`
---
-
-INSERT INTO `cadastrar_ativos` (`id`, `localizacao`, `fabricante`, `contrato`, `numero_serie_cpu`, `numero_serie_monitor`, `numero_serie_mouse`, `numero_serie_teclado`, `numero_ti_cpu`, `numero_ti_monitor`, `descricoes`) VALUES
-(5, 'data center', 'positivo', 'patrimonio', 65, 1651, 65165, 9, 9, 9, ''),
-(6, 'suvis', 'positivo', 'serviços epecificos', 85, 85, 85, 85, 85, 85, '85'),
-(7, 'intalacao', 'dell', 'alugada', 32, 32, 32, 32, 32, 32, '32');
-
 -- --------------------------------------------------------
 
 --
@@ -64,17 +55,6 @@ CREATE TABLE `tb_estoque` (
   `guardados` int(50) NOT NULL,
   `valor_material` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `tb_estoque`
---
-
-INSERT INTO `tb_estoque` (`id_produto`, `nome_produto`, `codigo_mv`, `guardados`, `valor_material`) VALUES
-(1, 'Telefones', 582, 55, 0),
-(2, 'Teclados USB', 789, 0, 0),
-(3, 'Mouses', 955, 858, 0),
-(4, 'Cabo de rede', 98, 1, 50),
-(5, 'Hd externo', 2541, 10, 0);
 
 -- --------------------------------------------------------
 
@@ -104,6 +84,16 @@ CREATE TABLE `tb_nivel_acesso` (
   `tipo` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `tb_nivel_acesso`
+--
+
+INSERT INTO `tb_nivel_acesso` (`id_acesso`, `tipo`) VALUES
+(1, 'administrador'),
+(2, 'unidade'),
+(3, 'simpress'),
+(4, 'tecnico');
+
 -- --------------------------------------------------------
 
 --
@@ -122,7 +112,50 @@ CREATE TABLE `tb_unidades` (
 --
 
 INSERT INTO `tb_unidades` (`id_unidade`, `nome_da_unidade`, `nome_gerente`, `cnes`) VALUES
-(1, 'COORDENAÇÃO', 'Carlos', 1);
+(1, ' OS - COORDENAÇÃO', 'Carlos Uehara', 1),
+(2, 'AD - ASSISTENCIA DOMICILIAR', 'Nívio', 6703607),
+(3, 'AMA ESPECIALIDADES VILA CONSTANCIA', 'Zaira', 6415415),
+(4, 'AMA/UBS INT. JD. MIRIAM I', '', 2787601),
+(5, 'AMA/UBS INT. PARQUE DOROTEIA', '', 2788292),
+(6, 'AMA/UBS INT. VILA IMPERIO', '', 5731143),
+(7, 'AMA/UBS INT. VILA JOANIZA', 'Arlete', 2751828),
+(8, 'AMA/UBS INTEGRADA V. MISSIONARIA', 'Janice', 2789078),
+(9, 'APD SANTO AMARO', '', 2),
+(10, 'CAPS ADULTO II CIDADE ADEMAR', '', 5731194),
+(11, 'CAPS INFANTO/JUVENIL CIDADE ADEMAR', '', 6646581),
+(12, 'CEO II / LRPD DR. HUMBERTO NASTARI', '', 2786621),
+(13, 'CERIII - CENTRO ESP EM REABILITACAO', '', 7706332),
+(14, 'PAI CIDADE ADEMAR', '', 3),
+(15, 'REDE HORA CERTA CIDADE ADEMAR', '', 2751925),
+(16, 'SRT CIDADE ADEMAR I', '', 4),
+(17, 'SRT CIDADE ADEMAR II', '', 5),
+(18, 'SRT SANTO AMARO', '', 6),
+(19, 'SRT SANTO AMARO II', '', 7),
+(20, 'SRT SANTO AMARO III', '', 8),
+(21, 'UBS CAMPO GRANDE', 'Maria de Lourdes', 3452689),
+(22, 'UBS INT. JARDIM MIRIAM II', 'Josiane', 2787911),
+(23, 'UBS JD. UMUARAMA', 'Miriam', 2787911),
+(24, 'UBS VILA ARRIETE', 'Heloisa Handa', 2788748),
+(25, 'UBS VILA CONSTANCIA', 'Paulo', 2788799),
+(26, 'UBS/ESF CIDADE JULIA', 'Ana', 2786893),
+(27, 'UBS/ESF JD. APURA', 'Jussara', 2787180),
+(28, 'UBS/ESF JD. NITEROI', '', 2787652),
+(29, 'UBS/ESF JD. NOVO PANTANAL', '', 7357761),
+(30, 'UBS/ESF JD. SAO CARLOS', '', 3074544),
+(31, 'UBS/ESF JARDIM SELMA - CIDADE ADEMAR', 'Laura', 10),
+(32, 'UBS/ESF LARANJEIRAS', 'Vladimir', 2788039),
+(33, 'UBS/ESF MAR PAULISTA', '', 2766000),
+(34, 'UBS/ESF MATA VIRGEM', '', 2788098),
+(35, 'UBS/ESF SAO JORGE', 'Leandro', 3996115),
+(36, 'UBS/ESF VILA APARECIDA', 'Juliana', 2788705),
+(37, 'UBS/ESF VILA GUACURI', 'Andrezza Carpentieri', 2788934),
+(38, 'UBS/ESF VILA IMPERIO II', 'Marcia', 2788977),
+(39, 'UPA PEDREIRA', 'Roberval', 6133460),
+(40, 'UPA SANTO AMARO', '', 2752107),
+(41, 'URSI CIDADE ADEMAR', '', 5599881),
+(42, 'UBS SANTO AMARO', 'Jacqueline Yuri Mitsuyuki', 2788640),
+(43, 'UBS JARDIM AEROPORTO', 'Liz Carvalho', 2787156),
+(44, 'UBS CHÁCARA SANTO ANTÔNIO', 'Eliete Almeida', 2765993);
 
 -- --------------------------------------------------------
 
@@ -147,9 +180,7 @@ CREATE TABLE `tb_usuario` (
 --
 
 INSERT INTO `tb_usuario` (`id_usuario`, `pessoa`, `unidade`, `senha`, `login_usuario`, `cracha`, `documento`, `sexo`, `nivel_acesso`) VALUES
-(1, 'Paulo Albuquerque', 'COORDENAÇÃO', 'e10adc3949ba59abbe56e057f20f883e', 'paulo.albuquerque', 8210, '408.754.818-09', 1, 'administrador'),
-(2, 'Juliane Albuquerque', 'COORDENAÇÃO', 'e10adc3949ba59abbe56e057f20f883e', 'juliane.albuqeurque', 8888, '161.158.155-61', 2, 'unidade'),
-(3, 'Carlos', 'COORDENAÇÃO', 'a76b42803663940982a0a45f382e3dcb', 'carlo.chefe', 95615, '961.651.561-56', 1, 'tecnico');
+(1, 'Paulo Henrique Araujo Ferreira de Albuquerque', 'OS - COORDENAÇÃO', '37d34385b4cc60ab7c18f0f3c2edc5b5', 'paulo.albuquerque', 8210, '408.754.818-09', 1, 'administrador');
 
 --
 -- Índices para tabelas despejadas
@@ -199,13 +230,13 @@ ALTER TABLE `tb_usuario`
 -- AUTO_INCREMENT de tabela `cadastrar_ativos`
 --
 ALTER TABLE `cadastrar_ativos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tb_estoque`
 --
 ALTER TABLE `tb_estoque`
-  MODIFY `id_produto` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_produto` int(50) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tb_impressoras`
@@ -223,13 +254,13 @@ ALTER TABLE `tb_nivel_acesso`
 -- AUTO_INCREMENT de tabela `tb_unidades`
 --
 ALTER TABLE `tb_unidades`
-  MODIFY `id_unidade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_unidade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT de tabela `tb_usuario`
 --
 ALTER TABLE `tb_usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

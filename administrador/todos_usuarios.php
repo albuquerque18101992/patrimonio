@@ -22,7 +22,7 @@ session_start();
     <!--Icone da aba, aba do navegador-->
     <link rel="icon" href='../imagens/logo_aba_engrenagem.png'>
 
-    <title>Patrimônio</title>
+    <title>Usuários</title>
 </head>
 
 <body>
@@ -66,9 +66,10 @@ session_start();
                     //Verificar se encontrou resultado na tabela "cadastrar_ativos"
                     if (($resultado_usuario) and ($resultado_usuario->num_rows != 0)) {
                     ?>
-                        <table class="table table-hover text-center">
-                            <thead>
+                        <table class="table table-hover table-sm text-center table-bordered table-responsive-lg">
+                            <thead class="thead-dark">
                                 <tr>
+                                    <th>ID</th>
                                     <th>Usuário</th>
                                     <th>Unidade</th>
                                     <th>Login</th>
@@ -80,7 +81,8 @@ session_start();
                                 <?php
                                 while ($row_usuario = mysqli_fetch_assoc($resultado_usuario)) {
                                 ?>
-                                    <tr>
+                                    <tr class="">
+                                        <td><?php echo $row_usuario['id_usuario']; ?></td>
                                         <td><?php echo $row_usuario['pessoa']; ?></td>
                                         <td><?php echo $row_usuario['unidade']; ?></td>
                                         <td><?php echo $row_usuario['login_usuario']; ?></td>
@@ -158,6 +160,21 @@ session_start();
                     }
 
                     ?>
+                    <nav aria-label="">
+                        <ul class="pagination pagination-sm justify-content-center">
+                            <li class="page-item">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>

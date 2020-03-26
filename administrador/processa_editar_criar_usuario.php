@@ -27,7 +27,7 @@ include_once("conexao.php");
 		$sexo = filter_input(INPUT_POST, 'sexo', FILTER_SANITIZE_STRING);
 		$nivel_acesso = filter_input(INPUT_POST, 'nivel_acesso', FILTER_SANITIZE_STRING);
 
-        $result_usuario = " UPDATE tb_usuario SET pessoa='$pessoa', unidade='$unidade', senha='$senha', login_usuario='$login_usuario' cracha'$cracha', documento'$documento', sexo'$sexo', nivel_acesso'$nivel_acesso' WHERE id_usuario = '$id_usuario' ";
+        $result_usuario = " UPDATE tb_usuario SET pessoa='$pessoa', unidade='$unidade', senha='$senha', login_usuario='$login_usuario', cracha='$cracha', documento='$documento', sexo='$sexo', nivel_acesso='$nivel_acesso' WHERE id_usuario = '$id_usuario' ";
 
         $resultado_usuario = mysqli_query($conn, $result_usuario);
 

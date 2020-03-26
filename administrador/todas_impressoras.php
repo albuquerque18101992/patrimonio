@@ -66,9 +66,9 @@ session_start();
                     //Verificar se encontrou resultado na tabela "cadastrar_ativos"
                     if (($resultado_usuario) and ($resultado_usuario->num_rows != 0)) {
                     ?>
-                        <table class="table table-hover text-center">
-                            <thead>
-                                <tr>
+                        <table class="table table-hover table-sm text-center table-bordered table-responsive-lg">
+                            <thead class="thead-dark">
+                                <tr class="thead-dark">
                                     <th>Localização</th>
                                     <th>Marca</th>
                                     <th>Contrato</th>
@@ -145,6 +145,21 @@ session_start();
                     }
 
                     ?>
+                    <nav aria-label="">
+                        <ul class="pagination pagination-sm justify-content-center">
+                            <li class="page-item">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
