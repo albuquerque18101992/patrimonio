@@ -81,7 +81,7 @@ session_start();
                                 <?php
                                 while ($row_usuario = mysqli_fetch_assoc($resultado_usuario)) {
                                 ?>
-                                    <tr class="">
+                                    <tr>
                                         <td><?php echo $row_usuario['id_usuario']; ?></td>
                                         <td><?php echo $row_usuario['pessoa']; ?></td>
                                         <td><?php echo $row_usuario['unidade']; ?></td>
@@ -107,10 +107,12 @@ session_start();
                                                         </div>
                                                     </div>
                                                 </div>
-
                                                 <a class="btn btn-outline-success btn-sm" href="../administrador/editar_usuario.php">Editar</a>
+                                                <a class="btn btn-outline-danger btn-sm" href="processa_delete_usuario.php" role="button" data-toggle="modal" data-target="#exampleModal">Apagar</a>
 
-                                                <a class="btn btn-outline-danger btn-sm" href="#" role="button" data-toggle="modal" data-target="#exampleModal">Apagar</a>
+                                                <?php
+                                                echo "<a href='processa_delete_usuario.php?id_usuario=" . $row_usuario['id_usuario'] . "' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>Apagar</a>";
+                                                ?>
 
                                                 <!-- Modal -->
                                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -129,7 +131,7 @@ session_start();
                                                                 <button type="button" class="btn btn-success" data-dismiss="modal">Voltar</button>
                                                                 <div class="btn btn-danger">
                                                                     <?php
-                                                                    echo "<a href='processa_delete_equipamento.php?id=" . $row_usuario['id_usuario'] . "' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>Apagar</a>";
+                                                                    echo "<a href='processa_delete_usuario.php?id_usuario=" . $row_usuario['id_usuario'] . "' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>Apagar</a>";
                                                                     ?>
                                                                 </div>
                                                             </div>
@@ -147,7 +149,6 @@ session_start();
                                                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">Apagar</a>
                                                 </div>
                                             </div>
-
                                         </td>
                                     </tr>
                                 <?php

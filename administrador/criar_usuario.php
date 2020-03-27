@@ -116,7 +116,7 @@ session_start();
 				<div class="col-md-6">
 					<div class="form-group">
 						<label><i class="fas fa-sort-numeric-up"></i> CPF</label>
-						<input type="text" name="documento" class="form-control" maxlength="14" id="cpf" placeholder="CPF" onkeypress="this.value = FormataCpf(event)" onpaste="return false;" required>
+						<input type="text" name="documento" class="form-control" maxlength="14" id="documento" placeholder="CPF" onkeypress="this.value = FormataCpf(event)" onpaste="return false;" required>
 					</div>
 				</div>
 				<div class="col-md-6">

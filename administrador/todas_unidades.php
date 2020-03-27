@@ -60,11 +60,11 @@ session_start();
                 <div class="container">
                     <?php
                     include_once('conexao.php');
-                    $result_usuario = "SELECT * FROM tb_unidades ORDER BY nome_da_unidade ASC";
-                    $resultado_usuario = mysqli_query($conn, $result_usuario);
+                    $result_unidade = "SELECT * FROM tb_unidades ORDER BY nome_da_unidade ASC";
+                    $resultado_unidade = mysqli_query($conn, $result_unidade);
 
                     //Verificar se encontrou resultado na tabela "cadastrar_ativos"
-                    if (($resultado_usuario) and ($resultado_usuario->num_rows != 0)) {
+                    if (($resultado_unidade) and ($resultado_unidade->num_rows != 0)) {
                     ?>
                         <table class="table table-hover table-sm text-center table-bordered table-responsive-lg">
                             <thead class="thead-dark">
@@ -78,7 +78,7 @@ session_start();
                             </thead>
                             <tbody>
                                 <?php
-                                while ($row_unidades = mysqli_fetch_assoc($resultado_usuario)) {
+                                while ($row_unidades = mysqli_fetch_assoc($resultado_unidade)) {
                                 ?>
                                     <tr>
                                         <td><?php echo $row_unidades['id_unidade']; ?></td>
@@ -104,6 +104,10 @@ session_start();
                                                 <a class="btn btn-outline-success btn-sm" href="../administrador/editar_unidade.php">Editar</a>
 
                                                 <a class="btn btn-outline-danger btn-sm" href="#" role="button" data-toggle="modal" data-target="#exampleModal">Apagar</a>
+
+                                                <?php
+                                                echo "<a href='processa_delete_unidades.php?id_unidade=" . $row_unidades['id_unidade'] . "' data-confirm='Tem certeza de que deseja excluir o item selecionado?'>Apagar</a>";
+                                                ?>
                                                 <!-- Modal -->
                                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog" role="document">
