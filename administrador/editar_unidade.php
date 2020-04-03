@@ -30,6 +30,11 @@ $row_unidade = mysqli_fetch_assoc($resultado_unidade);
     <link rel="icon" href='../imagens/logo_aba_engrenagem.png'>
 
     <title>Editar Unidade</title>
+    <style>
+        body {
+            background-color: #CDCDCD;
+        }
+    </style>
 </head>
 
 <body>
@@ -105,7 +110,7 @@ $row_unidade = mysqli_fetch_assoc($resultado_unidade);
             </div>
         </form>
     </div>
-    
+
 
     <div class="dmr">
         Sistema desenvolvido por Paulo Albuquerque - 2019 .

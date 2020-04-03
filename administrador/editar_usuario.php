@@ -32,6 +32,12 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuario);
 
 	<title>Editar Usuário</title>
 
+	<style>
+		body {
+			background-color: #CDCDCD;
+		}
+	</style>
+
 </head>
 
 <body>

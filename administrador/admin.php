@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+$titulo = 'Administrador';
 ?>
 
 <!doctype html>
@@ -23,7 +25,7 @@ session_start();
     <!--Icone da aba, aba do navegador-->
     <link rel="icon" href='../imagens/logo_aba_engrenagem.png'>
 
-    <title>Administrador</title>
+    <title><?php echo $titulo; ?></title>
 </head>
 
 <body>

@@ -113,7 +113,7 @@ session_start();
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <a class="btn btn-outline-success btn-sm" href="#">Editar</a>
+                                                <a class="btn btn-outline-success btn-sm" href="../administrador/editar-cadastrar.php">Editar</a>
                                                 <a class="btn btn-outline-danger btn-sm" href="processa_delete_equipamento.php" role="button" data-toggle="modal" data-target="#exampleModal">Apagar</a>
 
                                                 <?php
@@ -146,7 +146,6 @@ session_start();
                                                 </div>
                                             </span>
                                         </td>
-
                                     </tr>
                                 <?php
                                 } ?>
@@ -156,7 +155,6 @@ session_start();
                     } else {
                         echo "<div class='alert alert-danger' role='alert'>Nenhum equipamento encontrado!</div>";
                     }
-
                     ?>
                     <nav aria-label="">
                         <ul class="pagination pagination-sm justify-content-center">

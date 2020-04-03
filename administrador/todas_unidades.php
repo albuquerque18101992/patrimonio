@@ -22,7 +22,7 @@ session_start();
     <!--Icone da aba, aba do navegador-->
     <link rel="icon" href='../imagens/logo_aba_engrenagem.png'>
 
-    <title>Unidades</title>
+    <title>Unidades Cadastradas</title>
 </head>
 
 <body>
