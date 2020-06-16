@@ -120,6 +120,7 @@ session_start();
                         <select type="text" name="fabricante" class="form-control" name="fabricante" id="formatar">
                             <option selected disabled>SELECIONAR</option>
                             <option value="samsung">Samsung</option>
+                            <option value="samsung">Lexmark</option>
                             <option value="hp">HP</option>
                             <option value="outros">Outros</option>
                         </select>
@@ -175,6 +176,7 @@ session_start();
                         <option value="4510">4510</option>
                         <option value="4580">4580</option>
                         <option value="5370">5370</option>
+                        <option value="M404DW">M404DW</option>
                         <option value="MS610">MS610</option>
                         <option value="zebra">Zebra</option>
                         <option value="outros">Outros</option>

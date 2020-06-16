@@ -25,6 +25,15 @@ session_start();
     <link rel="icon" href='../imagens/logo_aba_engrenagem.png'>
 
     <title>Criar Unidade</title>
+
+    <style>
+        fieldset {
+            border-top-width: initial;
+            border: 2px solid black;
+            padding: 40px;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -86,6 +95,8 @@ session_start();
                     <input type="text" name="cnes" class="form-control" id="exampleInputEmail1" placeholder="Cadastro Nacional de Estabelecimentos de Saúde" required>
                 </div>
             </div>
+            <br>
+            
 
             <div class="cadastrar">
                 <div class="row">
@@ -107,8 +118,10 @@ session_start();
                 </div>
             </div>
         </form>
+
+
     </div>
-    
+
 
     <div class="dmr">
         Sistema desenvolvido por Paulo Albuquerque - 2019 .

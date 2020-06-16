@@ -67,11 +67,6 @@ session_start();
         </div>
 
         <div class="container-fluid">
-
-            
-                <h4 class="display-4 text-center">Sistema para armazenamento das informações dos computadores e demais equipamentos de informática . </h4>
-            
-
             <div class="paragrafos">
                 <p> Sistema Criado para armazenamento, consulta e conhecimento das máquinas da tecnologia da informação das unidades .
                     Sistema simples, onde a idéia é ter controle dos dados de série e modelos dos computadores nas unidades da OS Santa Catarina
@@ -81,11 +76,7 @@ session_start();
                 </p>
             </div>
         </div>
-
-        
-            <h2 class="text-center">Algumas das ferramentas que a equipe de tecnologia da informação gerencia e mantem sempre em funcionamento .</h2>
-        
-
+        <h2 class="text-center">Algumas das ferramentas que a equipe de tecnologia da informação gerencia e mantem sempre em funcionamento .</h2>
         <br>
 
         <div class="row">
